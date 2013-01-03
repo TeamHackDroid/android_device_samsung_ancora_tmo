@@ -53,8 +53,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
     $(LOCAL_PATH)/recovery/fix_reboot.sh:recovery/root/sbin/fix_reboot.sh \
     $(LOCAL_PATH)/prebuilt/SamsungServiceMode.apk:system/app/SamsungServiceMode.apk \
-    $(LOCAL_PATH)/prebuilt/swapsd.apk:system/app/swapsd.apk \
-    $(LOCAL_PATH)/prebuilt/es_file_explorer_v1_6_2_2.apk:system/app/es_file_explorer_v1_6_2_2.apk \
     $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs \
     $(LOCAL_PATH)/main.conf:system/etc/bluetooth/main.conf \
 
@@ -71,13 +69,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyfiles/sec_key.kl:system/usr/keylayout/sec_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_power_key.kl:system/usr/keylayout/sec_power_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
-
-# Modules
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/bthid.ko:system/lib/modules/bthid.ko \
-    $(LOCAL_PATH)/prebuilt/cifs.ko:system/lib/modules/cifs.ko \
-    $(LOCAL_PATH)/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
-    $(LOCAL_PATH)/prebuilt/sec_param.ko:system/lib/modules/sec_param.ko
 
 # LPM
 PRODUCT_COPY_FILES += \
@@ -155,15 +146,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.allow.mock.location=1 \
     ro.debuggable=1
-
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise

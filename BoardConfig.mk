@@ -26,7 +26,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/samsung/ancora/BoardConfigVendor.mk
+-include vendor/samsung/ancora_tmo/BoardConfigVendor.mk
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/ancora_tmo/include
 
@@ -142,6 +142,7 @@ TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/recovery.fstab
 # BOARD_UMS_LUNFILE := /sys/devices/platform/usb_mass_storage/lun%d/file
 # End recovery stuff
 
-TARGET_PREBUILT_KERNEL := device/samsung/ancora_tmo/prebuilt/zImage
+TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
+#TARGET_PREBUILT_KERNEL := device/samsung/ancora_tmo/prebuilt/zImage
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun%d/file
