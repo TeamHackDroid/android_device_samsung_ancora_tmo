@@ -74,10 +74,10 @@ on boot
     # this value will be referd in msm7k liblight. we change permission of this file due to cts fail.
     chmod 0664 /sys/devices/virtual/sec/ts/brightness
     chown system system /sys/devices/virtual/sec/ts/brightness
-	chown system system /sys/devices/virtual/sec/ts/enable_disable
-	chown system system sys/class/misc/notification/led
-	chown system system sys/class/misc/notification/bl_timeout
-	chown system system sys/class/misc/notification/wakelock
+    chown system system /sys/devices/virtual/sec/ts/enable_disable
+    chown system system sys/class/misc/notification/led
+    chown system system sys/class/misc/notification/bl_timeout
+    chown system system sys/class/misc/notification/wakelock
 
     # TSP Test Mode
     chown radio system /sys/devices/virtual/sec/qt602240_noise_test/set_threshould

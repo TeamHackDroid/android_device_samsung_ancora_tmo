@@ -33,7 +33,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml 
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
 # Feature live wallpaper
 PRODUCT_COPY_FILES += \
@@ -53,8 +53,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
     $(LOCAL_PATH)/recovery/fix_reboot.sh:recovery/root/sbin/fix_reboot.sh \
     $(LOCAL_PATH)/prebuilt/SamsungServiceMode.apk:system/app/SamsungServiceMode.apk \
-    $(LOCAL_PATH)/prebuilt/Torch.apk:system/app/Torch.apk \
-    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs
+    $(LOCAL_PATH)/prebuilt/swapsd.apk:system/app/swapsd.apk \
+    $(LOCAL_PATH)/prebuilt/es_file_explorer_v1_6_2_2.apk:system/app/es_file_explorer_v1_6_2_2.apk \
+    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs \
+    $(LOCAL_PATH)/main.conf:system/etc/bluetooth/main.conf \
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
@@ -69,6 +71,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyfiles/sec_key.kl:system/usr/keylayout/sec_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_power_key.kl:system/usr/keylayout/sec_power_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
+
+# Modules
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/bthid.ko:system/lib/modules/bthid.ko \
+    $(LOCAL_PATH)/prebuilt/cifs.ko:system/lib/modules/cifs.ko \
+    $(LOCAL_PATH)/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
+    $(LOCAL_PATH)/prebuilt/sec_param.ko:system/lib/modules/sec_param.ko
 
 # LPM
 PRODUCT_COPY_FILES += \
@@ -101,7 +110,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm/media/chargingwarning.qmg:system/media/chargingwarning.qmg
 
 PRODUCT_PACKAGES += \
-	lights.ancora_tmo \
+    lights.ancora_tmo \
     camera.msm7x30 \
     copybit.msm7x30 \
     gralloc.msm7x30 \
@@ -113,16 +122,16 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default
 
 PRODUCT_PACKAGES += \
-	libdivxdrmdecrypt \
+    libdivxdrmdecrypt \
     libmm-omxcore \
     libOmxCore \
-    libOmxVenc \
-    libOmxVdec \
-	libOmxAacEnc \
-	libOmxAmrEnc \
-	libOmxEvrcEnc \
-	libOmxQcelp13Enc \
     libstagefrighthw \
+    libOmxVdec \
+    libOmxVenc \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
     libI420colorconvert
 
 PRODUCT_PACKAGES += \
@@ -131,7 +140,7 @@ PRODUCT_PACKAGES += \
     e2label \
     mke2fs \
     mke2fs.conf \
-    resize2fs\
+    resize2fs \
     tune2fs \
     make_ext4fs \
     setup_fs
@@ -146,6 +155,15 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.allow.mock.location=1 \
     ro.debuggable=1
+
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+    LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
+else
+    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise

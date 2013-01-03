@@ -18,6 +18,8 @@
         <value>3</value>
     </array>
     <array name="cpu.speeds">
+        <value>1401600</value>
+        <value>1200000</value>
         <value>1024000</value>
         <value>806400</value>
         <value>768000</value>
@@ -27,6 +29,8 @@
     </array>
     <item name="cpu.idle">2</item>
     <array name="cpu.active">
+        <value>550</value>
+        <value>430</value>
         <value>380</value>
         <value>230</value>
         <value>200</value>
@@ -36,3 +40,4 @@
     </array>
     <item name="battery.capacity">1500</item>
 </device>
+
