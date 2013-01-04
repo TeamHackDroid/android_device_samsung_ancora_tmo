@@ -34,7 +34,8 @@ debug.sf.hw=1
 debug.egl.hw=1
 com.qc.hardware=true
 com.qc.hdmi_out=false
-debug.enabletr=false
+debug.enabletr=true
+ro.sf.compbypass.enable=1
 
 # QCOM CpuGovernorService
 dev.pm.dyn_samplingrate=1
