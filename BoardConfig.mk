@@ -81,7 +81,7 @@ BOARD_USES_LIBSECRIL_STUB := true
 
 BOARD_HAVE_SAMSUNG_AUDIO := true
 BOARD_USES_QCOM_AUDIO_RESETALL := true
-#BOARD_USES_QCOM_LPA := true
+#BOARD_USES_QCOM_AUDIO_LPA := true
 #BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
 
 BOARD_EGL_CFG := device/samsung/ancora_tmo/config/egl.cfg
@@ -139,9 +139,10 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/ancora_tmo/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/samsung/ancora_tmo/config/init.recovery.rc
 TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/recovery.fstab
 # Enable below line if compiling for a recovery version before 6.0.1.2
-#BOARD_UMS_LUNFILE := /sys/devices/platform/usb_mass_storage/lun%d/file
+# BOARD_UMS_LUNFILE := /sys/devices/platform/usb_mass_storage/lun%d/file
 # End recovery stuff
 
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun%d/file
-
 TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
+#TARGET_PREBUILT_KERNEL := device/samsung/ancora_tmo/prebuilt/zImage
+
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun%d/file

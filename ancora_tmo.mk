@@ -33,7 +33,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml 
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
 # Feature live wallpaper
 PRODUCT_COPY_FILES += \
@@ -51,10 +51,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/config/fstab.qcom:root/fstab.qcom \
     $(LOCAL_PATH)/config/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
-    $(LOCAL_PATH)/recovery/fix_reboot.sh:recovery/root/sbin/fix_reboot.sh \
     $(LOCAL_PATH)/prebuilt/SamsungServiceMode.apk:system/app/SamsungServiceMode.apk \
-    $(LOCAL_PATH)/prebuilt/Torch.apk:system/app/Torch.apk \
-    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs
+    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs 
+
+# Needed to reset bootmode when leaving recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
+    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/system/bin/postrecoveryboot.sh
+
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
@@ -101,7 +105,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm/media/chargingwarning.qmg:system/media/chargingwarning.qmg
 
 PRODUCT_PACKAGES += \
-	lights.ancora_tmo \
+    lights.ancora_tmo \
     camera.msm7x30 \
     copybit.msm7x30 \
     gralloc.msm7x30 \
@@ -113,16 +117,16 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default
 
 PRODUCT_PACKAGES += \
-	libdivxdrmdecrypt \
+    libdivxdrmdecrypt \
     libmm-omxcore \
     libOmxCore \
-    libOmxVenc \
-    libOmxVdec \
-	libOmxAacEnc \
-	libOmxAmrEnc \
-	libOmxEvrcEnc \
-	libOmxQcelp13Enc \
     libstagefrighthw \
+    libOmxVdec \
+    libOmxVenc \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
     libI420colorconvert
 
 PRODUCT_PACKAGES += \
@@ -131,7 +135,7 @@ PRODUCT_PACKAGES += \
     e2label \
     mke2fs \
     mke2fs.conf \
-    resize2fs\
+    resize2fs \
     tune2fs \
     make_ext4fs \
     setup_fs
