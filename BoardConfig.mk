@@ -117,7 +117,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_MAX_PARTITIONS := 28
 
-BOARD_MTP_DEVICE := "/dev/usb_mtp_gadget"
 
 # Begin recovery stuff
 #
@@ -145,4 +144,4 @@ TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/recovery.fstab
 TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
 #TARGET_PREBUILT_KERNEL := device/samsung/ancora_tmo/prebuilt/zImage
 
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
