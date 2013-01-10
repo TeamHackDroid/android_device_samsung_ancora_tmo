@@ -432,6 +432,7 @@ int camera_set_preview_window(struct camera_device * device,
     dev->window = window;
 
     if (!window) {
+    	gCameraHals[dev->cameraid]->setOverlay(NULL);
         //ALOGI("%s---: window is NULL", __FUNCTION__);
         return 0;
     }
