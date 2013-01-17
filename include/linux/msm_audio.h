@@ -1,6 +1,7 @@
 /* include/linux/msm_audio.h
  *
  * Copyright (C) 2008 Google, Inc.
+ * Copyright (c) 2012 Code Aurora Forum. All rights reserved.
  *
  * This software is licensed under the terms of the GNU General Public
  * License version 2, as published by the Free Software Foundation, and
@@ -89,7 +90,7 @@
 					struct msm_acdb_cmd_device)
 #define AUDIO_GET_ACDB_BLK _IOW(AUDIO_IOCTL_MAGIC, 96,  \
 					struct msm_acdb_cmd_device)
-					
+
 #define AUDIO_REGISTER_ION _IOW(AUDIO_IOCTL_MAGIC, 97, unsigned)
 #define AUDIO_DEREGISTER_ION _IOW(AUDIO_IOCTL_MAGIC, 98, unsigned)
 
@@ -170,8 +171,8 @@ struct msm_audio_stats {
 };
 
 struct msm_audio_ion_info {
-  int fd;
-  void *vaddr;
+	int fd;
+	void *vaddr;
 };
 
 struct msm_audio_pmem_info {
