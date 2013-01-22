@@ -31,11 +31,12 @@ ro.zram.default=0
 
 # QCOM
 debug.sf.hw=1
+debug.sf.swaprect=1
 debug.egl.hw=1
+debug.mdpcomp.logs=0
 com.qc.hardware=true
-com.qc.hdmi_out=false
 debug.enabletr=true
-ro.sf.compbypass.enable=1
+debug.hwui.render_dirty_regions=true
 
 # QCOM CpuGovernorService
 dev.pm.dyn_samplingrate=1
