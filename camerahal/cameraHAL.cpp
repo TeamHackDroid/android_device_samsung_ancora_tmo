@@ -972,10 +972,6 @@ int camera_device_close(hw_device_t* device)
         if (dev->base.ops) {
             free(dev->base.ops);
         }
-        if (dev->overlay != NULL) {
-            dev->overlay.clear();
-            dev->overlay = NULL;
-        }
         free(dev);
     }
 done:
