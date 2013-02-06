@@ -119,16 +119,11 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default
 
 PRODUCT_PACKAGES += \
-    libdivxdrmdecrypt \
     libmm-omxcore \
     libOmxCore \
-    libstagefrighthw \
     libOmxVdec \
     libOmxVenc \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
+    libstagefrighthw \
     libI420colorconvert
 
 PRODUCT_PACKAGES += \
