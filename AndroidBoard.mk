@@ -12,11 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# This file is executed by build/envsetup.sh, and can use anything
-# defined in envsetup.sh.
 #
-# In particular, you can add lunch options with the add_lunch_combo
-# function: add_lunch_combo generic-eng
+# AndroidBoard.mk is a legacy mechanism to deal with a few
+# edge-cases that can't be managed otherwise. No new rules
+# should be added to this file.
+#
 
-add_lunch_combo cyanogen_ancora-eng
-add_lunch_combo cyanogen_ancora-userdebug
+LOCAL_PATH := $(call my-dir)
+
+# Least specific includes go first, so that they can get
+# overridden further down
+include $(CLEAR_VARS)
+
+# include the non-open-source counterpart to this file
+-include vendor/samsung/ancora/AndroidBoardVendor.mk
