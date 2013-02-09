@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration for ancora.
-$(call inherit-product, device/samsung/ancora/full_ancora.mk)
+$(call inherit-product, device/samsung/ancora/full_ancora_tmo.mk)
 
 # Inherit some common cyanogenmod stuff.
 $(call inherit-product, vendor/cyanogen/products/common_full.mk)
@@ -10,9 +10,9 @@ $(call inherit-product, vendor/cyanogen/products/gsm.mk)
 #
 # Setup device specific product configuration.
 #
-PRODUCT_NAME := cyanogen_ancora
+PRODUCT_NAME := cyanogen_ancora_tmo
 PRODUCT_BRAND := samsung
-PRODUCT_DEVICE := ancora
+PRODUCT_DEVICE := ancora_tmo
 PRODUCT_MODEL := SGH-T679
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=samsung/SGH-T679/SGH-T679:2.3.6/GINGERBREAD/UVLE1:user/release-keys PRIVATE_BUILD_DESC="SGH-T679-user 2.3.6 GINGERBREAD UVLE1 release-keys"

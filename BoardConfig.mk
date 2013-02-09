@@ -27,9 +27,9 @@
 
 
 # inherit from the proprietary version
--include vendor/samsung/ancora/BoardConfigVendor.mk
+-include vendor/samsung/ancora_tmo/BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/ancora/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/ancora_tmo/include
 
 TARGET_BOARD_PLATFORM := msm7x30
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
@@ -49,7 +49,7 @@ TARGET_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_ROTATOR_KERNEL_FORMATS
 #TARGET_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
 
 TARGET_BOOTLOADER_BOARD_NAME := ancora_tmo
-TARGET_OTA_ASSERT_DEVICE := ancora_tmo,SGH-T679,ancora
+TARGET_OTA_ASSERT_DEVICE := ancora_tmo,SGH-T679,ancora_tmo
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -94,7 +94,7 @@ BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_FM_DEVICE := si4709
 
-BOARD_EGL_CFG := device/samsung/ancora/egl.cfg
+BOARD_EGL_CFG := device/samsung/ancora_tmo/egl.cfg
 
 USE_OPENGL_RENDERER := true
 
@@ -159,6 +159,6 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_ancora
 # End recovery stuff
 
 #TARGET_PREBUILT_KERNEL := device/samsung/ancora/prebuilt/zImage
-TARGET_KERNEL_CONFIG := ancora_tmo_rev00_defconfig
+TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
 
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file

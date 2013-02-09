@@ -13,7 +13,7 @@
 # limitations under the License.
 
 $(call inherit-product, $(LOCAL_PATH)/languages_enUS.mk)
-$(call inherit-product, $(LOCAL_PATH)/ancora.mk)
+$(call inherit-product, $(LOCAL_PATH)/ancora_tmo.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
 
