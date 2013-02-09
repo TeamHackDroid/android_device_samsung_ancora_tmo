@@ -18,4 +18,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_ancora.mk
+    $(LOCAL_DIR)/full_ancora_tmo.mk

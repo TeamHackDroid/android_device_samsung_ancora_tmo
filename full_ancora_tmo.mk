@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(LOCAL_PATH)/ancora_tmo.mk)
+$(call inherit-product, $(LOCAL_PATH)/languages_enUS.mk)
+$(call inherit-product, $(LOCAL_PATH)/ancora.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
+
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
+PRODUCT_LOCALES += enUS hdpi
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_ancora_tmo
 PRODUCT_DEVICE := ancora_tmo

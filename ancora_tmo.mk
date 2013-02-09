@@ -17,23 +17,24 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # This device is hdpi
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
-PRODUCT_LOCALES += hdpi
+PRODUCT_LOCALES += en_US hdpi
 
-# Boot and charging images
+# Boot screen
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ARIESVE.rle:root/ARIESVE.rle \
-    $(LOCAL_PATH)/lpm/charging.rle:root/charging.rle
+    $(LOCAL_PATH)/charging.rle:root/charging.rle
 
 # Support files
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
+    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml 
+#   frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # Feature live wallpaper
 PRODUCT_COPY_FILES += \
@@ -41,28 +42,29 @@ PRODUCT_COPY_FILES += \
 
 # Media configuration xml file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/init.qcom.rc:root/init.qcom.rc \
-    $(LOCAL_PATH)/config/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    $(LOCAL_PATH)/config/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    $(LOCAL_PATH)/config/vold.fstab:system/etc/vold.fstab \
-    $(LOCAL_PATH)/config/fstab.qcom:root/fstab.qcom \
-    $(LOCAL_PATH)/config/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
-    $(LOCAL_PATH)/prebuilt/SamsungServiceMode.apk:system/app/SamsungServiceMode.apk \
-    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs 
+    $(LOCAL_PATH)/init.qcom.rc:root/init.qcom.rc \
+    $(LOCAL_PATH)/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    $(LOCAL_PATH)/ueventd.qcom.rc:root/ueventd.qcom.rc \
+    $(LOCAL_PATH)/etc/adreno_config.txt:system/etc/adreno_config.txt \
+    $(LOCAL_PATH)/etc/vold.fstab:system/etc/vold.fstab \
+    $(LOCAL_PATH)/etc/wifi/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
+    $(LOCAL_PATH)/recovery/fix_reboot.sh:recovery/root/sbin/fix_reboot.sh \
+	$(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs \
+    $(LOCAL_PATH)/prebuilt/WiFi-Calling:system/app/WiFi-Calling.apk 
 
-# Needed to reset bootmode when leaving recovery
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/system/bin/postrecoveryboot.sh
+
 
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
+    $(LOCAL_PATH)/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
+
+# Bluetooth configuration files
+#PRODUCT_COPY_FILES += \
+#    system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf
 
 # Keychars and keylayout files
 PRODUCT_COPY_FILES += \
@@ -73,6 +75,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyfiles/sec_key.kl:system/usr/keylayout/sec_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_power_key.kl:system/usr/keylayout/sec_power_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
+
+# Modules
+PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
+#    $(LOCAL_PATH)/prebuilt/bthid.ko:root/lib/modules/bthid.ko \
+#    $(LOCAL_PATH)/prebuilt/cifs.ko:root/lib/modules/cifs.ko \
 
 # LPM
 PRODUCT_COPY_FILES += \
@@ -105,29 +113,22 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm/media/chargingwarning.qmg:system/media/chargingwarning.qmg
 
 PRODUCT_PACKAGES += \
-    lights.ancora_tmo \
+    librs_jni \
     camera.msm7x30 \
     copybit.msm7x30 \
     gralloc.msm7x30 \
     hwcomposer.msm7x30 \
-    gps.msm7x30 \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
-    audio_policy.conf \
-    audio.a2dp.default
+    audio.a2dp.default \
+    gps.ancora
 
 PRODUCT_PACKAGES += \
-    libdivxdrmdecrypt \
     libmm-omxcore \
     libOmxCore \
-    libstagefrighthw \
-    libOmxVdec \
     libOmxVenc \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libI420colorconvert
+    libOmxVdec \
+    libstagefrighthw
 
 PRODUCT_PACKAGES += \
     badblocks \
@@ -151,8 +152,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.allow.mock.location=1 \
     ro.debuggable=1
 
+
+
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-$(call inherit-product-if-exists, vendor/samsung/ancora_tmo/device-vendor.mk)
+#$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
+$(call inherit-product-if-exists, vendor/samsung/ancora/device-vendor.mk)
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
