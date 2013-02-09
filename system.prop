@@ -54,7 +54,7 @@ ro.vold.umsdirtyratio=50
 persist.service.adb.enable=1
 
 # Storage configuration
-ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1
+ro.vold.switchablepair=/mnt/sdcard,/mnt/external_sd
 
 # Enable repeatable keys in recovery
 ro.cwm.enable_key_repeat=true
