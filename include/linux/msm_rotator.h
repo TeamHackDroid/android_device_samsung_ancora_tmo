@@ -59,3 +59,4 @@ struct msm_rotator_platform_data {
 #endif
 };
 #endif
+
