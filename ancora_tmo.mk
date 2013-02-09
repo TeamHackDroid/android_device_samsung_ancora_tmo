@@ -26,14 +26,15 @@ PRODUCT_COPY_FILES += \
 
 # Support files
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
+    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # Feature live wallpaper
 PRODUCT_COPY_FILES += \
@@ -41,7 +42,6 @@ PRODUCT_COPY_FILES += \
 
 # Media configuration xml file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
@@ -49,7 +49,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/init.qcom.usb.rc:root/init.qcom.usb.rc \
     $(LOCAL_PATH)/config/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/config/vold.fstab:system/etc/vold.fstab \
-    $(LOCAL_PATH)/config/fstab.qcom:root/fstab.qcom \
     $(LOCAL_PATH)/config/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
     $(LOCAL_PATH)/prebuilt/SamsungServiceMode.apk:system/app/SamsungServiceMode.apk \
     $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs 
@@ -105,7 +104,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm/media/chargingwarning.qmg:system/media/chargingwarning.qmg
 
 PRODUCT_PACKAGES += \
-    lights.ancora_tmo \
+    lights.msm7x30 \
     camera.msm7x30 \
     copybit.msm7x30 \
     gralloc.msm7x30 \
@@ -113,21 +112,14 @@ PRODUCT_PACKAGES += \
     gps.msm7x30 \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
-    audio_policy.conf \
     audio.a2dp.default
 
 PRODUCT_PACKAGES += \
-    libdivxdrmdecrypt \
     libmm-omxcore \
     libOmxCore \
-    libstagefrighthw \
-    libOmxVdec \
     libOmxVenc \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libI420colorconvert
+    libOmxVdec \
+    libstagefrighthw
 
 PRODUCT_PACKAGES += \
     badblocks \
