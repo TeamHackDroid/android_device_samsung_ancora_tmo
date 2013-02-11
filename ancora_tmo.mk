@@ -146,11 +146,8 @@ PRODUCT_PACKAGES += \
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
-    ro.allow.mock.location=1 \
-    ro.debuggable=1
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/samsung/ancora_tmo/device-vendor.mk)
