@@ -24,7 +24,6 @@ on boot
 
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
-    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -125,10 +124,6 @@ on boot
     chown system system /proc/nosim_handler
     copy /data/dump_enable /proc/dump_enable
 
-    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 75000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 245760
-
     chown system system /sys/devices/system/cpu/cpufreq/ondemand/boostfreq
     chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/boostfreq
     chown system system /sys/devices/system/cpu/cpufreq/ondemand/boostpulse
@@ -145,8 +140,12 @@ on boot
     chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/powersave_bias
     chown system system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
     chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
-    chown system system /sys/devices/system/cpu/cpufreq ondemand/up_threshold
-    chmod 0664 /sys/devices/system/cpu/cpufreq ondemand/up_threshold
+    chown system system /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
+    chmod 0664 /sys/devices/system/cpu/cpufreq/ondemand/up_threshold
+
+    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
+    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 75000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 245760
 
     # Don't disable dmesg access for apps
     write /proc/sys/kernel/dmesg_restrict 0
@@ -165,7 +164,6 @@ on post-fs-data
     mkdir /data/misc/radio 0775 radio system
     mkdir /data/radio 0770 radio radio
 
-    mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
