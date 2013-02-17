@@ -20,7 +20,7 @@
 #define LOG_TAG "CameraHAL"
 
 #define MAX_CAMERAS_SUPPORTED 2
-#define GRALLOC_USAGE_PMEM_PRIVATE_ADSP GRALLOC_USAGE_PRIVATE_0
+#define GRALLOC_USAGE_PMEM_PRIVATE_ADSP GRALLOC_USAGE_PRIVATE_3
 
 #define CAMERA_ID_FRONT 1
 #define CAMERA_ID_BACK 0
@@ -413,8 +413,6 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams,priv_camera_devi
         }
         camParams.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,macro");
         camParams.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, "auto,ISO50,ISO100,ISO200,ISO400");
-        
-        camParams.set(CameraParameters::KEY_SUPPORTED_PREVIEW_FRAME_RATES, "30");
     }
 
     camParams.set(CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, 4);
