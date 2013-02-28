@@ -414,7 +414,7 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
         if (!camParams.get(android::CameraParameters::KEY_MAX_NUM_FOCUS_AREAS)) {
             camParams.set(CameraParameters::KEY_MAX_NUM_FOCUS_AREAS, 1);
         }
-		if (!camParams.get(android::CameraParameters::KEY_SUPPORTED_FLASH_MODES)) {
+        if (!camParams.get(android::CameraParameters::KEY_SUPPORTED_FLASH_MODES)) {
             camParams.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "off,auto,on,torch");
         }
         camParams.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,macro");
