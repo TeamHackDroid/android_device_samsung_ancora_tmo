@@ -24,7 +24,7 @@
 //#define DUMP_PARAMS 1   /* dump parameteters after get/set operation */
 
 #define MAX_CAMERAS_SUPPORTED 2
-#define GRALLOC_USAGE_PMEM_PRIVATE_ADSP GRALLOC_USAGE_PRIVATE_0
+#define GRALLOC_USAGE_PMEM_PRIVATE_ADSP GRALLOC_USAGE_PRIVATE_3
 
 #define CAMERA_ID_FRONT 1
 #define CAMERA_ID_BACK 0
@@ -36,7 +36,7 @@
 #include <signal.h>
 
 #include <cutils/log.h>
-#include <ui/OverlayHtc.h>
+#include <ui/legacy/Overlay.h>
 #include <camera/CameraParameters.h>
 #include <hardware/camera.h>
 #include <binder/IMemory.h>
@@ -414,7 +414,7 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
         if (!camParams.get(android::CameraParameters::KEY_MAX_NUM_FOCUS_AREAS)) {
             camParams.set(CameraParameters::KEY_MAX_NUM_FOCUS_AREAS, 1);
         }
-        if (!camParams.get(android::CameraParameters::KEY_SUPPORTED_FLASH_MODES)) {
+		if (!camParams.get(android::CameraParameters::KEY_SUPPORTED_FLASH_MODES)) {
             camParams.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "off,auto,on,torch");
         }
         camParams.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,macro");
