@@ -410,6 +410,7 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams,priv_camera_devi
         }
         if (!camParams.get(android::CameraParameters::KEY_SUPPORTED_FLASH_MODES)) {
             camParams.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "off,auto,on,torch");
+            camParams.set(CameraParameters::KEY_FLASH_MODE, "auto");
         }
         camParams.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,macro");
         camParams.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, "auto,ISO50,ISO100,ISO200,ISO400");
