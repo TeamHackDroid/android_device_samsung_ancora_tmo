@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml 
-#   frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # Feature live wallpaper
 PRODUCT_COPY_FILES += \
@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/etc/wifi/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
     $(LOCAL_PATH)/recovery/fix_reboot.sh:recovery/root/sbin/fix_reboot.sh \
-	$(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs \
+    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs \
     $(LOCAL_PATH)/prebuilt/WiFi-Calling:system/app/WiFi-Calling.apk 
 
 
@@ -77,7 +77,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyfiles/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
 
 # Modules
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
 #    $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
 #    $(LOCAL_PATH)/prebuilt/bthid.ko:root/lib/modules/bthid.ko \
 #    $(LOCAL_PATH)/prebuilt/cifs.ko:root/lib/modules/cifs.ko \
@@ -157,6 +157,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-#$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
+$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/samsung/ancora/device-vendor.mk)
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
+#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
