@@ -1,1 +1,0 @@
-﻿PRODUCT_LOCALES := en_US
