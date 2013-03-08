@@ -62,10 +62,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
 
-# Bluetooth configuration files
-#PRODUCT_COPY_FILES += \
-#    system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf
-
 # Keychars and keylayout files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyfiles/Broadcom_Bluetooth_HID.kcm.bin:system/usr/keychars/Broadcom_Bluetooth_HID.kcm.bin \
@@ -75,12 +71,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyfiles/sec_key.kl:system/usr/keylayout/sec_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_power_key.kl:system/usr/keylayout/sec_power_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
-
-# Modules
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
-#    $(LOCAL_PATH)/prebuilt/bthid.ko:root/lib/modules/bthid.ko \
-#    $(LOCAL_PATH)/prebuilt/cifs.ko:root/lib/modules/cifs.ko \
 
 # LPM
 PRODUCT_COPY_FILES += \
@@ -114,6 +104,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     librs_jni \
+	lights.ancora_tmo \
     camera.msm7x30 \
     copybit.msm7x30 \
     gralloc.msm7x30 \
@@ -121,7 +112,7 @@ PRODUCT_PACKAGES += \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
     audio.a2dp.default \
-    gps.ancora
+    gps.msm7x30 
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -159,4 +150,3 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/samsung/ancora/device-vendor.mk)
-#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
