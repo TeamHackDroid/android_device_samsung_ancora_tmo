@@ -41,7 +41,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml \
-	$(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/config/audio_policy.conf:system/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/init.qcom.rc:root/init.qcom.rc \
@@ -115,8 +115,8 @@ PRODUCT_PACKAGES += \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
     audio.a2dp.default \
-	audio.usb.default \
-	audio.r_submix.default
+    audio.usb.default \
+    audio.r_submix.default
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
