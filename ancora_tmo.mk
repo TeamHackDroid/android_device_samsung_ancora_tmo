@@ -105,12 +105,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm/media/chargingwarning.qmg:system/media/chargingwarning.qmg
 
 PRODUCT_PACKAGES += \
-    lights.ancora_tmo \
     camera.msm7x30 \
     copybit.msm7x30 \
     gralloc.msm7x30 \
     hwcomposer.msm7x30 \
     gps.msm7x30 \
+    lights.msm7x30 \
     power.msm7x30 \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
