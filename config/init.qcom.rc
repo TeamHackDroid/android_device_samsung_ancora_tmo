@@ -2,7 +2,7 @@ import init.qcom.usb.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
-	chmod 666 /proc/cmdline
+    chmod 666 /proc/cmdline
 	
 on init
     export EXTERNAL_STORAGE /storage/sdcard0
@@ -41,11 +41,11 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
-	# Bluetooth LPM
-	chmod 0220 /proc/bluetooth/sleep/lpm
-	chmod 0220 /proc/bluetooth/sleep/btwrite
-	chown bluetooth net_bt_stack /proc/bluetooth/sleep/lpm
-	chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwrite
+    # Bluetooth LPM
+    chmod 0220 /proc/bluetooth/sleep/lpm
+    chmod 0220 /proc/bluetooth/sleep/btwrite
+    chown bluetooth net_bt_stack /proc/bluetooth/sleep/lpm
+    chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwrite
 	
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
@@ -61,7 +61,7 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
-	chown root system /proc/net/ip_conntrack
+    chown root system /proc/net/ip_conntrack
 	
     # accelerometer
     chown system input /sys/class/input/input4/enable
