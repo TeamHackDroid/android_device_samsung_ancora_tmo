@@ -1,5 +1,5 @@
 #
-# system.prop for ancora
+# system.prop for ancora_tmo
 #
 rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/smd0
