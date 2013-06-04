@@ -404,7 +404,10 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams,priv_camera_devi
         camParams.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "off,auto,on,torch");
     
     if (dev->cameraid == CAMERA_ID_FRONT) {
+        camParams.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "");
         camParams.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, "");
+        camParams.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES, "");
+        camParams.set(CameraParameters::KEY_SUPPORTED_WHITE_BALANCE, "");
         camParams.set(CameraParameters::KEY_SUPPORTED_PREVIEW_FRAME_RATES, "15");
     }
 
