@@ -429,6 +429,9 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
     camParams.set(CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP, 1);
     
     camParams.set(CameraParameters::KEY_SUPPORTED_PREVIEW_FRAME_RATES, "30");
+    
+    camParams.set(CameraParameters::KEY_SUPPORTED_EFFECTS, "none,mono,negative,sepia");
+    camParams.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,infinity,normal,macro,facedetect,touchaf");
 }
 
 int camera_set_preview_window(struct camera_device * device,
