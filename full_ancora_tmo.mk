@@ -21,6 +21,6 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_ancora_tmo
 PRODUCT_DEVICE := ancora_tmo
-PRODUCT_BRAND := Samsung
-PRODUCT_MANUFACTURER := Samsung
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SGH-T679
