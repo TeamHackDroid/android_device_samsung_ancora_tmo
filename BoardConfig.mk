@@ -173,7 +173,7 @@ TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/ancora_tmo/recovery/zImage
 # BOARD_UMS_LUNFILE := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 # End recovery stuff
 
-TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
-#TARGET_PREBUILT_KERNEL := device/samsung/ancora_tmo/prebuilt/zImage
+#TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
+TARGET_PREBUILT_KERNEL := device/samsung/ancora_tmo/prebuilt/zImage
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
