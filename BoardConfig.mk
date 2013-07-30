@@ -123,12 +123,25 @@ BOARD_USES_LEGACY_OVERLAY := true
 BOARD_CAMERA_USE_MM_HEAP := true
 TARGET_DISABLE_ARM_PIE := true
 
+# Lights HAL
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Power HAL
 TARGET_PROVIDES_POWERHAL := true
 
+#GPS
 BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm7x30
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+
+# FM Radio
+BOARD_HAVE_QCOM_FM := true
+BOARD_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
+
+# Sensors
+BOARD_USE_LEGACY_SENSORS_FUSION := false
+
+
 
 TARGET_USERIMAGES_USE_EXT4 := true
 
@@ -153,7 +166,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/ancora_tmo/recovery/recovery_keys.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/ancora_tmo/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/samsung/ancora_tmo/config/init.recovery.rc
-RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/recovery.fstab
 # Enable below line if compiling for a recovery version before 6.0.1.2
 # BOARD_UMS_LUNFILE := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
