@@ -139,9 +139,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
-    libnetcmdiface \
-    PhotoTable \
-    SunBeam 
+    libnetcmdiface 
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
