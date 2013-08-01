@@ -169,6 +169,10 @@ TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/recovery.fstab
 TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/ancora_tmo/recovery/zImage
 # Enable below line if compiling for a recovery version before 6.0.1.2
 # BOARD_UMS_LUNFILE := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+
+# FSTAB version 
+RECOVERY_FSTAB_VERSION := 2 
+
 # End recovery stuff
 
 #TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
