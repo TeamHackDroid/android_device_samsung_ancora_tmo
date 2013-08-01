@@ -165,7 +165,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/ancora_tmo/recovery/recovery_keys.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/ancora_tmo/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/samsung/ancora_tmo/config/init.recovery.rc
-TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/config/fstab.qcom
 TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/ancora_tmo/recovery/zImage
 # Enable below line if compiling for a recovery version before 6.0.1.2
 # BOARD_UMS_LUNFILE := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
