@@ -134,7 +134,6 @@ PRODUCT_PACKAGES += \
     mke2fs.conf \
     resize2fs \
     tune2fs \
-    make_ext4fs \
     setup_fs
 
 PRODUCT_PACKAGES += \
