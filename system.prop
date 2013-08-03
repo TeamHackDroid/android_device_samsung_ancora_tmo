@@ -42,7 +42,7 @@ use.non-omx.mp3.decoder=true
 af.resampler.quality=255
 
 # Set default USB interface
-persist.sys.usb.config=mtp
+persist.sys.usb.config=mass_storage,adb
 
 # Increase speed for UMS transfer
 ro.vold.umsdirtyratio=50
