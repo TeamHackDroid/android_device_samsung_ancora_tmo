@@ -140,6 +140,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     libnetcmdiface 
+    
+# Adreno 2xx is slower with the scissor optimization enabled
+PRODUCT_PROPERTY_OVERRIDES += \
+       ro.hwui.disable_scissor_opt=true
+
+# Kernel
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+    LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
+else
+    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
