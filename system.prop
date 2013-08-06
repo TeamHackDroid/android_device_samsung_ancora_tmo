@@ -56,3 +56,6 @@ persist.sys.vold.switchexternal=0
 
 # Enable repeatable keys in recovery
 ro.cwm.enable_key_repeat=true
+
+# Enable reboot to download in recovery
+ro.bootloader.mode=download
