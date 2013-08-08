@@ -146,17 +146,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
-    libnetcmdiface 
-    
-# Support for Browser's saved page feature. This allows
-# for pages saved on previous versions of the OS to be
-# viewed on the current OS.
-PRODUCT_PACKAGES += \
-    libskia_legacy
-    
-# Adreno 2xx is slower with the scissor optimization enabled
-PRODUCT_PROPERTY_OVERRIDES += \
-       ro.hwui.disable_scissor_opt=true
+    libnetcmdiface    
 
 # Kernel
 ifeq ($(TARGET_PREBUILT_KERNEL),)
@@ -171,10 +161,6 @@ PRODUCT_COPY_FILES += \
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
-    
-# Support Screenshots 
-PRODUCT_PROPERTY_OVERRIDES += \ 
-    ro.bq.gpu_to_cpu_unsupported=1
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
