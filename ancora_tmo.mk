@@ -54,6 +54,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/TaskManager.apk:system/app/TaskManager.apk \
     $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs 
 
+# Modules
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/cifs.ko:root/lib/modules/cifs.ko \
+    $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
+    $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko \
+    $(LOCAL_PATH)/prebuilt/cifs.ko:system/lib/modules/cifs.ko \
+    $(LOCAL_PATH)/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
+    $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
+	
 # Needed to reset bootmode when leaving recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
