@@ -27,6 +27,9 @@ ro.opengles.version=131072
 # Disable zram by default
 ro.zram.default=0
 
+# Reduce the limit of background apps
+sys.mem.max_hidden_apps=4
+
 # QCOM
 com.qc.hardware=true
 debug.sf.hw=1
