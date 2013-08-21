@@ -28,7 +28,7 @@ dalvik.vm.dexopt-data-only=1
 ro.zram.default=0
 
 # Reduce the limit of background apps
-ro.sys.fw.bg_apps_limit=10
+sys.mem.max_hidden_apps=4
 
 # QCOM
 com.qc.hardware=true
