@@ -33,7 +33,6 @@
 
 #include "sensors.h"
 
-#include "LightSensor.h"
 #include "ProximitySensor.h"
 #include "Bma222Sensor.h"
 #include "CompassSensor.h"
@@ -44,13 +43,11 @@
 #define SENSORS_ACCELERATION     (1<<ID_A)
 #define SENSORS_MAGNETIC_FIELD   (1<<ID_M)
 #define SENSORS_ORIENTATION      (1<<ID_O)
-#define SENSORS_LIGHT            (1<<ID_L)
 #define SENSORS_PROXIMITY        (1<<ID_P)
 
 #define SENSORS_ACCELERATION_HANDLE     0
 #define SENSORS_MAGNETIC_FIELD_HANDLE   1
 #define SENSORS_ORIENTATION_HANDLE      2
-#define SENSORS_LIGHT_HANDLE            3
 #define SENSORS_PROXIMITY_HANDLE        4
 
 /*****************************************************************************/
@@ -70,10 +67,6 @@ static const struct sensor_t sSensorList[] = {
           "Yamaha",
           1, SENSORS_ORIENTATION_HANDLE,
           SENSOR_TYPE_ORIENTATION, RANGE_O, RESOLUTION_O, 4.2f, 10000, { } },
-        { "GP2A Light sensor",
-          "Sharp",
-          1, SENSORS_LIGHT_HANDLE,
-          SENSOR_TYPE_LIGHT, 11000.0f, 1.0f, 0.75f, 0, { } },
         { "GP2A Proximity sensor",
           "Sharp",
           1, SENSORS_PROXIMITY_HANDLE,
@@ -120,7 +113,6 @@ struct sensors_poll_context_t {
 
 private:
     enum {
-        light           = 0,
         proximity       = 1,
         bosch           = 2,
         yamaha          = 3,
@@ -153,8 +145,6 @@ private:
                 return orientation;
             case ID_P:
                 return proximity;
-            case ID_L:
-                return light;
                  
         }
         return -EINVAL;
@@ -165,11 +155,6 @@ private:
 
 sensors_poll_context_t::sensors_poll_context_t()
 {
-    mSensors[light] = new LightSensor();
-    mPollFds[light].fd = mSensors[light]->getFd();
-    mPollFds[light].events = POLLIN;
-    mPollFds[light].revents = 0;
-
     mSensors[proximity] = new ProximitySensor();
     mPollFds[proximity].fd = mSensors[proximity]->getFd();
     mPollFds[proximity].events = POLLIN;

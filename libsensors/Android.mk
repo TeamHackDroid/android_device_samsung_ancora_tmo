@@ -33,7 +33,6 @@ LOCAL_CFLAGS := -DLOG_TAG=\"Sensors\"
 LOCAL_SRC_FILES := 				\
 			sensors.cpp 		\
 			SensorBase.cpp		\
-			LightSensor.cpp		\
 			ProximitySensor.cpp	\
 			Bma222Sensor.cpp	\
 			CompassSensor.cpp	\
