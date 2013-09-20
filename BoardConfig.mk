@@ -36,8 +36,8 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a8
-
 TARGET_ARCH_LOWMEM := true
+TARGET_CPU_VARIANT := scorpion
 
 # Enable NEON feature
 TARGET_ARCH := arm
@@ -86,8 +86,8 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/ancora_tmo/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/ancora_tmo/bluetooth/vnd_ancora.txt
 
+#RIL
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
-
 BOARD_RIL_CLASS := ../../../device/samsung/ancora_tmo/ril/
 BOARD_USES_LEGACY_RIL := true
 BOARD_USES_LIBSECRIL_STUB := true
@@ -110,6 +110,7 @@ TARGET_NO_HW_VSYNC := false
 TARGET_USES_ION := false
 TARGET_USES_C2D_COMPOSITION := true
 BOARD_EGL_NEEDS_LEGACY_FB := true
+BOARD_ALLOW_EGL_HIBERNATION := true
 
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
