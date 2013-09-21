@@ -29,7 +29,7 @@
 
 /*****************************************************************************/
 CompassSensor::CompassSensor()
-    : SensorBase(NULL, "magnetic_sensor"),
+    : SensorBase(NULL, "compass_sensor"),
       //mEnabled(0),
       mInputReader(4),
       mHasPendingEvent(false)
