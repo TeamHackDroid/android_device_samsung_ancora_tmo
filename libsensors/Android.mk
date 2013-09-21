@@ -35,7 +35,7 @@ LOCAL_SRC_FILES := 				\
 			SensorBase.cpp		\
 			ProximitySensor.cpp	\
 			Bma222Sensor.cpp	\
-			CompassSensor.cpp	\
+			AkmSensor.cpp           \
 			OrientationSensor.cpp	\
 			InputEventReader.cpp
 
