@@ -66,20 +66,20 @@ on boot
     chown root system /proc/net/ip_conntrack
 	
     # accelerometer
-    chown system input /sys/class/input/event6/device/enable
-    chown system input /sys/class/input/event6/device/delay
-    chown system input /sys/class/input/event6/device/position
-    chown system input /sys/class/input/event6/device/threshold
-    chown system input /sys/class/input/event6/device/wake
-    chown system input /sys/class/input/event6/device/data
-    chown system input /sys/class/input/event6/device/calibration
+    chown system input /sys/class/input/event4/device/enable
+    chown system input /sys/class/input/event4/device/delay
+    chown system input /sys/class/input/event4/device/position
+    chown system input /sys/class/input/event4/device/threshold
+    chown system input /sys/class/input/event4/device/wake
+    chown system input /sys/class/input/event4/device/data
+    chown system input /sys/class/input/event4/device/calibration
 
     # proximity
-    chown system input /sys/class/input/event8/device/enable
-    chown system input /sys/class/input/event8/device/delay
-    chown system input /sys/class/input/event8/device/wake
-    chown system input /sys/class/input/event8/device/data
-    chown system input /sys/class/input/event8/device/status
+    chown system input /sys/class/input/event5/device/enable
+    chown system input /sys/class/input/event5/device/delay
+    chown system input /sys/class/input/event5/device/wake
+    chown system input /sys/class/input/event5/device/data
+    chown system input /sys/class/input/event5/device/status
 
     chown system system /sys/devices/platform/msm_sdcc.1/polling
     chown system system /sys/devices/platform/msm_sdcc.2/polling
