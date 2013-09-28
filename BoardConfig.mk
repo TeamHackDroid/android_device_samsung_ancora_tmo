@@ -167,19 +167,12 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_SDCARD_INTERNAL := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/ancora_tmo/recovery/recovery_keys.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/ancora_tmo/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/samsung/ancora_tmo/config/init.recovery.rc
 TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/config/fstab.qcom
-# Enable below line if compiling for a recovery version before 6.0.1.2
-# BOARD_UMS_LUNFILE := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-
-# FSTAB version 
-RECOVERY_FSTAB_VERSION := 2 
 
 # End recovery stuff
 
 #TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
 TARGET_PREBUILT_KERNEL := device/samsung/ancora_tmo/prebuilt/zImage
-TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/ancora_tmo/recovery/zImage
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
