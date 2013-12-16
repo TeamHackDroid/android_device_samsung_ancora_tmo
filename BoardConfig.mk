@@ -28,6 +28,9 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/samsung/ancora_tmo/BoardConfigVendor.mk
 
+# create the folder /usr to prevent the build from failing
+$(shell mkdir -p $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/)
+
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/ancora_tmo/include
 
 TARGET_BOARD_PLATFORM := msm7x30
@@ -92,14 +95,16 @@ BOARD_RIL_CLASS := ../../../device/samsung/ancora_tmo/ril/
 BOARD_USES_LEGACY_RIL := true
 BOARD_USES_LIBSECRIL_STUB := true
 
-TARGET_QCOM_AUDIO_VARIANT := caf
+# Audio
 BOARD_HAVE_SAMSUNG_AUDIO := true
 BOARD_USES_QCOM_AUDIO_RESETALL := true
 BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
 
 COMMON_GLOBAL_CFLAGS += -DNEW_ION_API
 BOARD_EGL_CFG := device/samsung/ancora_tmo/config/egl.cfg
-
+BOARD_ALLOW_EGL_HIBERNATION := true
+TARGET_NO_HW_VSYNC := false
+TARGET_USES_C2D_COMPOSITION := true
 USE_OPENGL_RENDERER := true
 
 # QCOM webkit
@@ -108,7 +113,7 @@ TARGET_FORCE_CPU_UPLOAD := true
 
 TARGET_QCOM_MEDIA_VARIANT := caf
 TARGET_QCOM_DISPLAY_VARIANT := caf
-TARGET_NO_HW_VSYNC := false
+TARGET_QCOM_AUDIO_VARIANT := caf
 TARGET_USES_ION := true
 TARGET_USES_C2D_COMPOSITION := true
 
@@ -117,17 +122,25 @@ BOARD_USES_QCOM_GPS := true
 
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
-# Camera stuff
+# Camera
 BOARD_USES_LEGACY_OVERLAY := true
+BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true
 TARGET_DISABLE_ARM_PIE := true
 BOARD_USES_PMEM_ADSP := true
+BOARD_NEEDS_MEMORYHEAPPMEM := true
 
+# Lights HAL
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Power HAL
 TARGET_PROVIDES_POWERHAL := true
 
 BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm7x30
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+
+# Sensors
+BOARD_USE_LEGACY_SENSORS_FUSION := false
 
 TARGET_USERIMAGES_USE_EXT4 := true
 
