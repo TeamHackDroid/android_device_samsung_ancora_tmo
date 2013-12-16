@@ -498,7 +498,7 @@ int camera_set_preview_window(struct camera_device * device,
     //    return -1;
     //}
 
-    window->set_usage(window, GRALLOC_USAGE_PMEM_PRIVATE_ADSP | GRALLOC_USAGE_HW_RENDER);
+    window->set_usage(window, GRALLOC_USAGE_PRIVATE_SYSTEM_HEAP | GRALLOC_USAGE_HW_RENDER);
 
     if (window->set_buffers_geometry(window, preview_width,
                                      preview_height, hal_pixel_format)) {
