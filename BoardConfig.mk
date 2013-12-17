@@ -168,6 +168,11 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/ancora_tmo/recovery/rec
 TARGET_RECOVERY_INITRC := device/samsung/ancora_tmo/config/init.recovery.rc
 TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/config/fstab.qcom
 
+# Bootanimation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+TARGET_BOOTANIMATION_USE_RGB565 := true
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/samsung/ancora_tmo/sepolicy
