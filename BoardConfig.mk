@@ -28,7 +28,7 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/samsung/ancora_tmo/BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/ancora_tmo/include
+#TARGET_SPECIFIC_HEADER_PATH := device/samsung/ancora_tmo/include
 
 TARGET_BOARD_PLATFORM := msm7x30
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
