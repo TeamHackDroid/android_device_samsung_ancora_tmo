@@ -168,6 +168,32 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/ancora_tmo/recovery/rec
 TARGET_RECOVERY_INITRC := device/samsung/ancora_tmo/config/init.recovery.rc
 TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/config/fstab.qcom
 
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/ancora_tmo/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    file_contexts \
+    property_contexts \
+    bridge.te \
+    camera.te \
+    device.te \
+    dhcp.te \
+    domain.te \
+    drmserver.te \
+    file.te \
+    geomagneticd.te \
+    init.te \
+    mac_update.te \
+    mediaserver.te \
+    rild.te \
+    rmt.te \
+    surfaceflinger.te \
+    system.te \
+    tee.te \
+    ueventd.te \
+    wpa_supplicant.te
+
 # End recovery stuff
 
 TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
