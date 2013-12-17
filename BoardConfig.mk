@@ -28,10 +28,10 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/samsung/ancora_tmo/BoardConfigVendor.mk
 
+#TARGET_SPECIFIC_HEADER_PATH := device/samsung/ancora_tmo/include
+
 # create the folder /usr to prevent the build from failing
 $(shell mkdir -p $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/)
-
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/ancora_tmo/include
 
 TARGET_BOARD_PLATFORM := msm7x30
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
@@ -120,8 +120,6 @@ TARGET_USES_C2D_COMPOSITION := true
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_GPS := true
 
-BOARD_USE_LEGACY_TOUCHSCREEN := true
-
 # Camera
 BOARD_USES_LEGACY_OVERLAY := true
 BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true
@@ -170,7 +168,8 @@ TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/recovery.fstab
 # BOARD_UMS_LUNFILE := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 # End recovery stuff
 
-TARGET_KERNEL_CONFIG := ancora_tmo_defconfig_pmem_ion
+TARGET_KERNEL_CONFIG := ancora_tmo_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/ancora_tmo
 #TARGET_PREBUILT_KERNEL := device/samsung/ancora_tmo/prebuilt/zImage
 TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/ancora_tmo/recovery/zImage
 
