@@ -81,7 +81,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/cifs.ko:system/lib/modules/cifs.ko \
     $(LOCAL_PATH)/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
     $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
-	
+    
 # LPM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm/bin/charging_mode:system/bin/charging_mode \
@@ -116,6 +116,7 @@ PRODUCT_PACKAGES += \
     camera.msm7x30 \
     copybit.msm7x30 \
     gralloc.msm7x30 \
+    libgenlock \
     hwcomposer.msm7x30 \
     gps.msm7x30 \
     lights.msm7x30 \
