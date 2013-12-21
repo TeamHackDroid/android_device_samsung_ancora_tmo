@@ -123,15 +123,21 @@ TARGET_PROVIDES_POWERHAL := true
 # Lights HAL
 TARGET_PROVIDES_LIBLIGHT := true
 
+# healthd HAL
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.qcom
+
 # Camera stuff
 COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_LEGACY
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 USE_CAMERA_STUB := true
 BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true
 BOARD_USES_LEGACY_OVERLAY := true
 TARGET_DISABLE_ARM_PIE := true
 
 # Audio
+COMMON_GLOBAL_CFLAGS += -DQCOM_ENHANCED_AUDIO
 BOARD_HAVE_SAMSUNG_AUDIO := true
+BOARD_USES_LEGACY_ALSA_AUDIO := true
 BOARD_USES_QCOM_AUDIO_RESETALL := true
 BOARD_USES_QCOM_AUDIO_VOIPMUTE := true
 
@@ -200,3 +206,31 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_BOOTANIMATION_USE_RGB565 := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/ariesve/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    file_contexts \
+    property_contexts \
+    bridge.te \
+    camera.te \
+    device.te \
+    dhcp.te \
+    domain.te \
+    drmserver.te \
+    file.te \
+    healthd.te \
+    init.te \
+    mac_update.te \
+    mediaserver.te \
+    rild.te \
+    rmt.te \
+    surfaceflinger.te \
+    system.te \
+    tee.te \
+    ueventd.te \
+    wpa_supplicant.te
+	
+SKIP_SET_METADATA := true
