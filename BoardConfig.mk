@@ -60,6 +60,7 @@ TARGET_NO_INITLOGO := true
 
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
+BOARD_USE_LEGACY_TOUCHSCREEN := true
 
 # Wifi related defines
 WIFI_BAND                        := 802_11_ABG
