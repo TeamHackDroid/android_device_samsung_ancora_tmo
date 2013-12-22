@@ -209,7 +209,7 @@ TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/ariesve/sepolicy
+    device/samsung/ancora_tmo/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \
