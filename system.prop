@@ -35,6 +35,7 @@ com.qc.hardware=true
 debug.sf.hw=1
 debug.egl.hw=1
 debug.mdpcomp.logs=0
+debug.egl.recordable.rgba8888=1
 
 # Low Power Audio
 lpa.decode=false
@@ -60,3 +61,6 @@ ro.cwm.enable_key_repeat=true
 
 # Enable reboot to download in recovery
 ro.bootloader.mode=download
+
+# Low memory device
+ro.config.low_ram=true

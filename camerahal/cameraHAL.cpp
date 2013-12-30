@@ -68,23 +68,23 @@ static int camera_get_camera_info(int camera_id, struct camera_info *info);
 int camera_get_number_of_cameras(void);
 
 static struct hw_module_methods_t camera_module_methods = {
-    open: camera_device_open
+    .open = camera_device_open
 };
 
 camera_module_t HAL_MODULE_INFO_SYM = {
     common: {
-        tag: HARDWARE_MODULE_TAG,
-        module_api_version: CAMERA_DEVICE_API_VERSION_1_0,
-        hal_api_version: 0,
-        id: CAMERA_HARDWARE_MODULE_ID,
-        name: "7x30 CameraHal Module",
-        author: "Zhibin Wu",
-        methods: &camera_module_methods,
-        dso: NULL, /* remove compilation warnings */
-        reserved: {0}, /* remove compilation warnings */
+        .tag = HARDWARE_MODULE_TAG,
+        .module_api_version = CAMERA_DEVICE_API_VERSION_1_0,
+        .hal_api_version = 0,
+        .id = CAMERA_HARDWARE_MODULE_ID,
+        .name = "7x30 CameraHal Module",
+        .author = "Zhibin Wu",
+        .methods = &camera_module_methods,
+        .dso = NULL, /* remove compilation warnings */
+        .reserved = {0}, /* remove compilation warnings */
     },
-    get_number_of_cameras: camera_get_number_of_cameras,
-    get_camera_info: camera_get_camera_info,
+    .get_number_of_cameras = camera_get_number_of_cameras,
+    .get_camera_info = camera_get_camera_info,
 };
 
 typedef struct priv_camera_device {

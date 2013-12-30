@@ -117,7 +117,8 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     libaudio-resampler \
-    libaudioparameter
+    libaudioparameter \
+	libgenlock
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -125,7 +126,8 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
-    libc2dcolorconvert
+    libc2dcolorconvert \
+	libdashplayer
 
 PRODUCT_PACKAGES += \
     badblocks \
