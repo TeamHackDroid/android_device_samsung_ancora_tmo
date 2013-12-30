@@ -110,7 +110,7 @@ public class SamsungRIL extends RIL implements CommandsInterface {
     }
 
     @Override
-    protected RILRequest
+    protected void
     processSolicited (Parcel p) {
         int serial, error;
 
@@ -127,7 +127,7 @@ public class SamsungRIL extends RIL implements CommandsInterface {
         if (rr == null) {
             Rlog.w(RILJ_LOG_TAG, "Unexpected solicited response! sn: "
                     + serial + " error: " + error);
-            return null;
+            return;
         }
 
         Object ret = null;
@@ -265,8 +265,25 @@ public class SamsungRIL extends RIL implements CommandsInterface {
                     AsyncResult.forMessage(rr.mResult, null, tr);
                     rr.mResult.sendToTarget();
                 }
-                return rr;
+                rr.release();
+                return;
             }
+        }
+
+        // Here and below fake RIL_UNSOL_RESPONSE_SIM_STATUS_CHANGED, see b/7255789.
+        // This is needed otherwise we don't automatically transition to the main lock
+        // screen when the pin or puk is entered incorrectly.
+        switch (rr.mRequest) {
+            case RIL_REQUEST_ENTER_SIM_PUK:
+            case RIL_REQUEST_ENTER_SIM_PUK2:
+                if (mIccStatusChangedRegistrants != null) {
+                    if (RILJ_LOGD) {
+                        riljLog("ON enter sim puk fakeSimStatusChanged: reg count="
+                                + mIccStatusChangedRegistrants.size());
+                    }
+                    mIccStatusChangedRegistrants.notifyRegistrants();
+                }
+                break;
         }
 
         if (error != 0) {
@@ -297,11 +314,13 @@ public class SamsungRIL extends RIL implements CommandsInterface {
                             + requestToString(rr.mRequest)
                             + " exception, Processing Samsung SMS fix ", tr);
                     rr.onError(error, ret);
-                    return rr;
+                    rr.release();
+                    return;
                 }
             } else {
                 rr.onError(error, ret);
-                return rr;
+                rr.release();
+                return;
             }
         }
 
@@ -313,7 +332,7 @@ public class SamsungRIL extends RIL implements CommandsInterface {
             rr.mResult.sendToTarget();
         }
 
-        return rr;
+        rr.release();
     }
 
     @Override
@@ -632,7 +651,7 @@ public class SamsungRIL extends RIL implements CommandsInterface {
         }
         else {
             /* Matching Samsung signal strength to asu.
-               Method taken from Samsungs cdma/gsmSignalStateTracker */
+              Method taken from Samsungs cdma/gsmSignalStateTracker */
             if(mSignalbarCount)
             {
                 // Samsung sends the count of bars that should be displayed instead of
