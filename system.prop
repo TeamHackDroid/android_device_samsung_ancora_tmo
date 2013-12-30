@@ -28,12 +28,11 @@ dalvik.vm.dexopt-data-only=1
 ro.zram.default=0
 
 # Reduce the limit of background apps
-sys.mem.max_hidden_apps=4
+sys.mem.max_hidden_apps=10
 
 # QCOM
 com.qc.hardware=true
 debug.sf.hw=1
-debug.egl.hw=1
 debug.mdpcomp.logs=0
 debug.egl.recordable.rgba8888=1
 
@@ -61,3 +60,10 @@ ro.cwm.enable_key_repeat=true
 
 # Enable reboot to download in recovery
 ro.bootloader.mode=download
+
+# Low memory device
+ro.config.low_ram=true
+
+# Use ION uncached buffers for video recording and video playback
+persist.camera.mem.usecache=0
+persist.video.mem.usecache=0

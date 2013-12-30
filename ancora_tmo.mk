@@ -109,6 +109,7 @@ PRODUCT_PACKAGES += \
     copybit.msm7x30 \
     gralloc.msm7x30 \
     hwcomposer.msm7x30 \
+	memtrack.msm7x30 \
     gps.msm7x30 \
     lights.msm7x30 \
     power.msm7x30 \
@@ -117,7 +118,8 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     libaudio-resampler \
-    libaudioparameter
+    libaudioparameter \
+	libgenlock
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -125,7 +127,8 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
-    libc2dcolorconvert
+    libc2dcolorconvert \
+	libdashplayer
 
 PRODUCT_PACKAGES += \
     badblocks \
