@@ -69,15 +69,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyfiles/sec_key.kl:system/usr/keylayout/sec_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_power_key.kl:system/usr/keylayout/sec_power_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
-
-# Modules
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/cifs.ko:root/lib/modules/cifs.ko \
-    $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
-    $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko \
-    $(LOCAL_PATH)/prebuilt/cifs.ko:system/lib/modules/cifs.ko \
-    $(LOCAL_PATH)/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
-    $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
     
 # LPM
 PRODUCT_COPY_FILES += \
