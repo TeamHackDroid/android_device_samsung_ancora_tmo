@@ -234,5 +234,3 @@ BOARD_SEPOLICY_UNION += \
     tee.te \
     ueventd.te \
     wpa_supplicant.te
-	
-SKIP_SET_METADATA := true
