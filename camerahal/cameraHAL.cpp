@@ -820,6 +820,9 @@ int camera_take_picture(struct camera_device * device)
         CAMERA_MSG_COMPRESSED_IMAGE);
 
     rv = gCameraHals[dev->cameraid]->takePicture();
+    
+    dev->preview_started = 0;
+    gCameraHals[dev->cameraid]->stopPreview();
 
     ALOGI("%s--- rv %d", __FUNCTION__,rv);
     return rv;
