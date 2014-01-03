@@ -269,6 +269,22 @@ public class SamsungRIL extends RIL implements CommandsInterface {
             }
         }
 
+        // Here and below fake RIL_UNSOL_RESPONSE_SIM_STATUS_CHANGED, see b/7255789.
+        // This is needed otherwise we don't automatically transition to the main lock
+        // screen when the pin or puk is entered incorrectly.
+        switch (rr.mRequest) {
+            case RIL_REQUEST_ENTER_SIM_PUK:
+            case RIL_REQUEST_ENTER_SIM_PUK2:
+                if (mIccStatusChangedRegistrants != null) {
+                    if (RILJ_LOGD) {
+                        riljLog("ON enter sim puk fakeSimStatusChanged: reg count="
+                                + mIccStatusChangedRegistrants.size());
+                    }
+                    mIccStatusChangedRegistrants.notifyRegistrants();
+                }
+                break;
+        }
+
         if (error != 0) {
             switch (rr.mRequest) {
                 case RIL_REQUEST_ENTER_SIM_PIN:
@@ -371,9 +387,9 @@ public class SamsungRIL extends RIL implements CommandsInterface {
 
         switch(response) {
         /*
-				cat libs/telephony/ril_unsol_commands.h \
-				| egrep "^ *{RIL_" \
-				| sed -re 's/\{([^,]+),[^,]+,([^}]+).+/case \1: \2(rr, p); break;/'
+                                cat libs/telephony/ril_unsol_commands.h \
+                                | egrep "^ *{RIL_" \
+                                | sed -re 's/\{([^,]+),[^,]+,([^}]+).+/case \1: \2(rr, p); break;/'
          */
 
         case RIL_UNSOL_NITZ_TIME_RECEIVED: ret =  responseString(p); break;
@@ -632,7 +648,7 @@ public class SamsungRIL extends RIL implements CommandsInterface {
         }
         else {
             /* Matching Samsung signal strength to asu.
-               Method taken from Samsungs cdma/gsmSignalStateTracker */
+              Method taken from Samsungs cdma/gsmSignalStateTracker */
             if(mSignalbarCount)
             {
                 // Samsung sends the count of bars that should be displayed instead of
