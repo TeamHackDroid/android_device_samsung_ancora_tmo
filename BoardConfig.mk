@@ -137,7 +137,6 @@ TARGET_DISABLE_ARM_PIE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Audio
-COMMON_GLOBAL_CFLAGS += -DQCOM_ENHANCED_AUDIO
 BOARD_HAVE_SAMSUNG_AUDIO := true
 BOARD_USES_LEGACY_ALSA_AUDIO := true
 BOARD_USES_QCOM_AUDIO_RESETALL := true
@@ -181,9 +180,8 @@ BOARD_VOLD_MAX_PARTITIONS := 28
 
 # Custom recovery files
 TARGET_RECOVERY_INITRC := device/samsung/ancora_tmo/config/init.recovery.rc
-TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/config/fstab.qcom
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/ancora_tmo/recovery/recovery_keys.c
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/ancora_tmo/recovery/graphics.c
 
 # TWRP recovery stuff
 BOARD_HAS_SDCARD_INTERNAL := true
