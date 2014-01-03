@@ -183,7 +183,7 @@ BOARD_VOLD_MAX_PARTITIONS := 28
 
 # Custom recovery files
 TARGET_RECOVERY_INITRC := device/samsung/ancora_tmo/config/init.recovery.rc
-TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/ancora_tmo/config/fstab.qcom
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/ancora_tmo/recovery/recovery_keys.c
 
 # TWRP recovery stuff
