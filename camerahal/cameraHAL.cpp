@@ -393,9 +393,10 @@ static void wrap_data_callback_timestamp(nsecs_t timestamp, int32_t msg_type,
  * implementation of priv_camera_device_ops functions
  *******************************************************************/
 
-void CameraHAL_FixupParams(android::CameraParameters &camParams, &settings, priv_camera_device_t* dev)
+void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_device_t* dev)
 {
     const char *preferred_size = "640x480";
+    const char *recordSize = params.get(CameraParameters::KEY_VIDEO_SIZE);
 
     camParams.set(android::CameraParameters::KEY_VIDEO_FRAME_FORMAT,
                   android::CameraParameters::PIXEL_FORMAT_YUV420SP);
@@ -413,6 +414,7 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, &settings, priv
         camParams.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES, "");
         camParams.set(CameraParameters::KEY_SUPPORTED_WHITE_BALANCE, "");
         camParams.set(CameraParameters::KEY_SUPPORTED_PREVIEW_FRAME_RATES, "15");
+        camParams.set(CameraParameters::KEY_VIDEO_SIZE, "320x240");
     }
 
     if (dev->cameraid == CAMERA_ID_BACK) {
@@ -427,18 +429,14 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, &settings, priv
         camParams.set(CameraParameters::KEY_SUPPORTED_EFFECTS, "none,mono,negative,sepia");
         camParams.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,infinity,normal,macro,facedetect,touchaf");
         
+        camParams.set(CameraParameters::KEY_VIDEO_SIZE, "640x480");
+        
     }
 
     camParams.set(CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, 4);
     camParams.set(CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION, -4);
     camParams.set(CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP, 1);
     
-   if (!settings.get(android::CameraParameters::KEY_VIDEO_SIZE)) {
-      settings.set("record-size", preferred_size);
-      settings.set(android::CameraParameters::KEY_VIDEO_SIZE, preferred_size);
-   } else {
-      settings.set("record-size", settings.get(android::CameraParameters::KEY_VIDEO_SIZE));
-   }
 }
 
 int camera_set_preview_window(struct camera_device * device,
