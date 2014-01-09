@@ -122,7 +122,8 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
-    libc2dcolorconvert
+    libc2dcolorconvert \
+    libdashplayer
 
 PRODUCT_PACKAGES += \
     badblocks \
