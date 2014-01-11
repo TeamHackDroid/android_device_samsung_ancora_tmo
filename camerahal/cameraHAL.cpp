@@ -429,10 +429,10 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
         
         
         //Fix later #880
-        //saturation 2
-        //sharpness 2
-        //contrast 2
-        //brightness 4
+        //saturation 2 KEY_ saturation-max saturation-min saturation max-saturation KEY_MAX_SATURATION KEY_MIN_SATURATION KEY_SATURATION
+        //sharpness 2 KEY_  sharpness-max sharpness-min sharpness max-sharpness KEY_MAX_SHARPNESS KEY_MIN_SHARPNESS KEY_SHARPNESS
+        //contrast 2 KEY_ contrast-max contrast-min contrast max-contrast KEY_MAX_CONTRAST KEY_MIN_CONTRAST KEY_CONTRAST
+        //brightness 4 ?unknown?
         
         
     }
