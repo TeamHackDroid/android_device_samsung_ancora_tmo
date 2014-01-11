@@ -433,10 +433,10 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
         camParams.set(CameraParameters::KEY_MAX_SATURATION, 2);
         camParams.set(CameraParameters::KEY_MIN_SATURATION, -2);
         //sharpness 2 KEY_  sharpness-max sharpness-min sharpness max-sharpness KEY_MAX_SHARPNESS KEY_MIN_SHARPNESS KEY_SHARPNESS
-        camParams.set(CameraParameters::KEY_MAX_SHARPNESS, 2);
+        //camParams.set(CameraParameters::KEY_MAX_SHARPNESS, 2);
         camParams.set(CameraParameters::KEY_MIN_SHARPNESS, -2);        
         //contrast 2 KEY_ contrast-max contrast-min contrast max-contrast KEY_MAX_CONTRAST KEY_MIN_CONTRAST KEY_CONTRAST
-        camParams.set(CameraParameters::KEY_MAX_CONTRAST, 2);
+        //camParams.set(CameraParameters::KEY_MAX_CONTRAST, 2);
         camParams.set(CameraParameters::KEY_MIN_CONTRAST, -2);          
         //brightness 4 ?unknown?
         
