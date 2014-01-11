@@ -428,7 +428,7 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
         camParams.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,infinity,normal,macro,facedetect,touchaf");
         
         
-        //Fix later #880
+        //Fix later #880 #3929
         //saturation 2 KEY_ saturation-max saturation-min saturation max-saturation KEY_MAX_SATURATION KEY_MIN_SATURATION KEY_SATURATION
         camParams.set(CameraParameters::KEY_MAX_SATURATION, 2);
         camParams.set(CameraParameters::KEY_MIN_SATURATION, -2);
