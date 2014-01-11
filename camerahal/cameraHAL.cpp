@@ -427,6 +427,14 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
         camParams.set(CameraParameters::KEY_SUPPORTED_EFFECTS, "none,mono,negative,sepia");
         camParams.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,infinity,normal,macro,facedetect,touchaf");
         
+        
+        //Fix later #880
+        //saturation 2
+        //sharpness 2
+        //contrast 2
+        //brightness 4
+        
+        
     }
 
     camParams.set(CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, 4);
