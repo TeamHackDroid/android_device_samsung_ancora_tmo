@@ -407,7 +407,7 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
     camParams.set(CameraParameters::KEY_FLASH_MODE, "off");
 
     if (dev->cameraid == CAMERA_ID_FRONT) {
-        camParams.set(CameraParameters::KEY_SUPPORTED_EFFECTS, "")
+        camParams.set(CameraParameters::KEY_SUPPORTED_EFFECTS, "");
         camParams.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "");
         camParams.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, "");
         camParams.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES, "");
@@ -426,21 +426,6 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
         
         camParams.set(CameraParameters::KEY_SUPPORTED_EFFECTS, "none,mono,negative,sepia");
         camParams.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,infinity,normal,macro,facedetect,touchaf");
-        
-        
-        //Fix later #880 #3929
-        //saturation 2 KEY_ saturation-max saturation-min saturation max-saturation KEY_MAX_SATURATION KEY_MIN_SATURATION KEY_SATURATION
-        camParams.set(CameraParameters::KEY_MAX_SATURATION, 2);
-        camParams.set(CameraParameters::KEY_MIN_SATURATION, -2);
-        //sharpness 2 KEY_  sharpness-max sharpness-min sharpness max-sharpness KEY_MAX_SHARPNESS KEY_MIN_SHARPNESS KEY_SHARPNESS
-        //camParams.set(CameraParameters::KEY_MAX_SHARPNESS, 2);
-        camParams.set(CameraParameters::KEY_MIN_SHARPNESS, -2);        
-        //contrast 2 KEY_ contrast-max contrast-min contrast max-contrast KEY_MAX_CONTRAST KEY_MIN_CONTRAST KEY_CONTRAST
-        //camParams.set(CameraParameters::KEY_MAX_CONTRAST, 2);
-        camParams.set(CameraParameters::KEY_MIN_CONTRAST, -2);          
-        //brightness 4 ?unknown?
-        
-        
     }
 
     camParams.set(CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, 4);
