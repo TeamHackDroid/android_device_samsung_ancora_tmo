@@ -4,11 +4,11 @@
 rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/smd0
 
-ro.ril.hsxpa=2
-ro.ril.gprsclass=12
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
 ro.ril.disable.power.collapse=1
 ro.telephony.ril_class=SamsungRIL
-ro.telephony.ril.v3=datacall,icccardstatus,facilitylock
+ro.telephony.ril.v3=datacall,icccardstatus
 
 # Wifi interface device
 wifi.interface=wlan0
@@ -61,3 +61,8 @@ ro.cwm.enable_key_repeat=true
 
 # Enable reboot to download in recovery
 ro.bootloader.mode=download
+
+# Use ION uncached buffers for video recording and video playback
+ persist.camera.mem.usecache=0
+ persist.video.mem.usecache=0
+ 
