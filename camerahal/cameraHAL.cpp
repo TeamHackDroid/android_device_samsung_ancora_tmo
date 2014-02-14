@@ -395,7 +395,6 @@ static void wrap_data_callback_timestamp(nsecs_t timestamp, int32_t msg_type,
 void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_device_t* dev)
 {
     const char *preferred_size = "640x480";
-    const char *preview_sizes = "1280x720,800x480,720x480,640x480,592x480,576x432,480x320,384x288,352x288,320x240,240x160,176x144";
 
     camParams.set(android::CameraParameters::KEY_VIDEO_FRAME_FORMAT,
                   android::CameraParameters::PIXEL_FORMAT_YUV420SP);
@@ -404,10 +403,14 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
         camParams.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO,
                   preferred_size);
     }
-    if (!camParams.get(CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES)) {
-        camParams.set(CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES,
-                  preview_sizes);
+
+    int rotation = camParams.getInt(CameraParameters::KEY_ROTATION);
+    if (rotation == 90 || rotation == 270){
+         camParams.set(CameraParameters::KEY_PREVIEW_SIZE, "480x800");
+         camParams.set(CameraParameters::KEY_VIDEO_SIZE, "640x480");
     }
+
+
     camParams.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "off,auto,on,torch");
     camParams.set(CameraParameters::KEY_FLASH_MODE, "off");
 
@@ -436,6 +439,8 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
     camParams.set(CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, 4);
     camParams.set(CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION, -4);
     camParams.set(CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP, 1);
+    
+    camParams.set(CameraParameters::KEY_SUPPORTED_VIDEO_SIZES, "640x480,320x240,176x144");
     
 }
 
