@@ -404,13 +404,6 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
                   preferred_size);
     }
 
-
-    /*int rotation = camParams.getInt(CameraParameters::KEY_ROTATION);
-    if (rotation == 90 || rotation == 270){
-
-    }*/
-
-
     camParams.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, "off,auto,on,torch");
     camParams.set(CameraParameters::KEY_FLASH_MODE, "off");
 
