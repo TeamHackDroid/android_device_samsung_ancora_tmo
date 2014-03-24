@@ -138,10 +138,6 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     libnetcmdiface    
 
-# Gps
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/gps.conf:system/etc/gps.conf
-
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
