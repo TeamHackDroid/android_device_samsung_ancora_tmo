@@ -408,19 +408,9 @@ void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_dev
     camParams.set(CameraParameters::KEY_FLASH_MODE, "off");
     
     int rotation = camParams.getInt(CameraParameters::KEY_ROTATION);
-    switch (rotation) {
-        case 90:
-            camParams.set(android::CameraParameters::KEY_ROTATION, "0");
-            break;
-        case 180:
-            camParams.set(android::CameraParameters::KEY_ROTATION, "90");
-            break;
-        case 270:
-            camParams.set(android::CameraParameters::KEY_ROTATION, "180");
-            break;
-        default:
-            break;
-    }                         
+    if (rotation == 90){
+        camParams.set(android::CameraParameters::KEY_ROTATION, "0");  
+    }
 
     if (dev->cameraid == CAMERA_ID_FRONT) {
         camParams.set(CameraParameters::KEY_SUPPORTED_EFFECTS, "");
