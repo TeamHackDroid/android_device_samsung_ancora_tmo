@@ -141,6 +141,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     libnetcmdiface    
+
+# Device-specific packages
+PRODUCT_PACKAGES += \
+    sensors.ancora_tmo \
     
 # Gps
 PRODUCT_COPY_FILES += \
