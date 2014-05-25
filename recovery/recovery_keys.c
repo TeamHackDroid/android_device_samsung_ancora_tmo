@@ -13,7 +13,7 @@ int device_handle_key(int key_code, int visible) {
             case KEY_VOLUMEDOWN:
                 return HIGHLIGHT_DOWN;
 
-	        case KEY_HOME:
+	    case KEY_HOME:
                 return SELECT_ITEM;
 
             case KEY_END:
