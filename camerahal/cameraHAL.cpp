@@ -395,24 +395,15 @@ static void wrap_data_callback_timestamp(nsecs_t timestamp, int32_t msg_type,
 void CameraHAL_FixupParams(android::CameraParameters &camParams, priv_camera_device_t* dev)
 {
     const char *preferred_size = "640x480";
-    const char *video_sizes = "1280x720,800x480,720x480,640x480,352x288,320x240,176x144";
+    const char *video_sizes = "640x480,320x240,176x144";
 
     camParams.set(android::CameraParameters::KEY_VIDEO_FRAME_FORMAT,
                   android::CameraParameters::PIXEL_FORMAT_YUV420SP);
 
     camParams.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES,
                   video_sizes);
-    int videosize = camParams.getInt(CameraParameters::KEY_PREVIEW_SIZE);
-    if (videosize == "640x480"){
-        camParams.set(android::CameraParameters::KEY_VIDEO_SIZE, "640x480");  
-    }
-    if (videosize == "320x240"){
-        camParams.set(android::CameraParameters::KEY_VIDEO_SIZE, "320x240");  
-    }
-    if (videosize == "176x144"){
-        camParams.set(android::CameraParameters::KEY_VIDEO_SIZE, "176x144");  
-    }
-    
+
+
     if (!camParams.get(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO)) {
         camParams.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO,
                   preferred_size);
