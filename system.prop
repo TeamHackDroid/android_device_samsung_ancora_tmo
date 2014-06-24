@@ -38,7 +38,7 @@ lpa.decode=true
 lpa.use-stagefright=true
 
 # Resampler quality
-af.resampler.quality=255
+af.resampler.quality=4
 
 # Set default USB interface
 persist.sys.usb.config=mass_storage
