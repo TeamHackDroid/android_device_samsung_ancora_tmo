@@ -360,12 +360,7 @@ static void wrap_data_callback(int32_t msg_type, const sp<IMemory>& dataPtr,
     }
 
     data = wrap_memory_data(dev, dataPtr);
-
-    if (dev->data_callback)
-        dev->data_callback(msg_type, data, 0, NULL, dev->user);
-
-
-   if (data) {
+    if (data) {
         if (dev->data_callback)
             dev->data_callback(msg_type, data, 0, NULL, dev->user);
         data->release(data);
