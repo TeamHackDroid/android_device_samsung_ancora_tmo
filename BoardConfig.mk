@@ -119,9 +119,6 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 # Use insecure heap
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
 
-# Use retire fence from MDP driver
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
-
 # Power HAL
 TARGET_PROVIDES_POWERHAL := true
 
