@@ -146,6 +146,9 @@ PRODUCT_PACKAGES += \
 	
 # qcmediaplayer
 PRODUCT_PACKAGES += qcmediaplayer
+
+# Torch
+PRODUCT_PACKAGES += Torch
     
 # Gps
 PRODUCT_COPY_FILES += \
