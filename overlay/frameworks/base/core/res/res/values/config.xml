@@ -58,7 +58,7 @@
          be empty.  An example would be "usb.*" -->
     <string-array translatable="false" name="config_tether_usb_regexs">
         <item>"rndis0"</item>
-		<item>"usb0"</item>
+        <item>"usb0"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -84,9 +84,9 @@
         <item>5</item>
         <item>7</item>
     </integer-array>
-	
-	<!-- Indicate whether the SD card is accessible without removing the battery. -->
-	<bool name="config_batterySdCardAccessibility">true</bool>
+
+    <!-- Indicate whether the SD card is accessible without removing the battery. -->
+    <bool name="config_batterySdCardAccessibility">true</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
@@ -123,7 +123,7 @@
     <integer-array name="config_scrollBarrierVibePattern">
         <item>40</item>
     </integer-array>
-    
+
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">30</integer>
 
@@ -133,10 +133,10 @@
     <!-- Timeout in MS for how long you have to long-press the back key to
          kill the foreground app. -->
     <integer name="config_backKillTimeout">1500</integer>
-	
+
     <!-- Workaround for devices with broken keyboards -->
     <bool name="config_forceDisableHardwareKeyboard">true</bool>
-	
+
     <!-- Boolean to enable stk functionality on Samsung phones -->
     <bool name="config_samsung_stk">true</bool>
 
@@ -152,7 +152,12 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">15</integer>
 
-	<!-- Device supports LED flashlight -->
+    <!-- Device supports LED flashlight -->
     <bool name="config_enableTorch">true</bool>
 
+    <!-- Default value for proximity check on screen wake
+         NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
+    -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <integer name="config_proximityCheckTimeout">800</integer>
 </resources>
