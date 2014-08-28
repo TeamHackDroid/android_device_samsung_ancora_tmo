@@ -34,14 +34,13 @@
 /lib/libC2D2.so
 /lib/libcamera.so
 /lib/libcaps.so
-/lib/libexifa.so
 /lib/libgemini.so
 /lib/libgsl.so
-/lib/libjpega.so
 /lib/libmmipl.so
 /lib/libmmjpeg.so
 /lib/libmmosal.so
 /lib/libmmparser.so
+/lib/libOmxMp3Dec.so
 /lib/liboemcamera.so
 /lib/libOpenVG.so
 /lib/libPanoraMax3.so
