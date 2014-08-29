@@ -449,7 +449,7 @@ int OptParse(
             case 'z':
                 /* If error detected, hopefully 0 is returned. */
                 errno = 0;
-                g_dbgzone = (int)strtol(optarg, (char**)NULL, 0); 
+                g_dbgzone = (int)strtol(optarg, (char**)NULL, 0);
                 AKMDEBUG(AKMDATA_DEBUG, "%s: Dbg Zone=%d\n", __FUNCTION__, g_dbgzone);
                 break;
 			default:

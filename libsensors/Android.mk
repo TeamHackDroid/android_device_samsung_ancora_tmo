@@ -16,7 +16,7 @@ LOCAL_SRC_FILES := \
         AkmSensor.cpp \
         akmdfs/libAKM_OSS/AKFS_AOC.c \
         akmdfs/libAKM_OSS/AKFS_Configure.c \
-        akmdfs/libAKM_OSS/AKFS_Decomp.c \		
+        akmdfs/libAKM_OSS/AKFS_Decomp.c \
         akmdfs/libAKM_OSS/AKFS_Device.c \
         akmdfs/libAKM_OSS/AKFS_Direction.c \
         akmdfs/libAKM_OSS/AKFS_VNorm.c \
@@ -28,7 +28,7 @@ LOCAL_SRC_FILES := \
         Bma222Sensor.cpp    \
         OrientationSensor.cpp   \
         InputEventReader.cpp
-            
+
 LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/akmdfs \
         $(LOCAL_PATH)/akmdfs/AKFS_APIs_8975 \

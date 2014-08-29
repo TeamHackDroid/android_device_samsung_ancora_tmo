@@ -39,12 +39,12 @@ CompassSensor::CompassSensor()
     mPendingEvent.sensor = ID_M;
     mPendingEvent.type = SENSOR_TYPE_MAGNETIC_FIELD;
     mPendingEvent.magnetic.status = SENSOR_STATUS_ACCURACY_HIGH;
-    
+
 
     memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
 
     ALOGD("CompassSensor::CompassSensor() open data_fd");
-	
+
     if (data_fd) {
         strcpy(input_sysfs_path, "/sys/class/input/");
         strcat(input_sysfs_path, input_name);
@@ -89,7 +89,7 @@ int CompassSensor::enable(int32_t, int en) {
             mEnabled = flags;
             return 0;
         }
-        return -1;        
+        return -1;
     }
     return 0;
 }
@@ -141,14 +141,14 @@ int CompassSensor::readEvents(sensors_event_t* data, int count)
     //ALOGD("CompassSensor::~readEvents() %d", count);
     if (count < 1)
         return -EINVAL;
-        
+
     if (mHasPendingEvent) {
         mHasPendingEvent = false;
         mPendingEvent.timestamp = getTimestamp();
         *data = mPendingEvent;
         return mEnabled ? 1 : 0;
     }
-        
+
     ssize_t n = mInputReader.fill(data_fd);
     if (n < 0)
         return n;

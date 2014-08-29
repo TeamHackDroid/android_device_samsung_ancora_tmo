@@ -27,9 +27,9 @@
 #define LOAD_BUF_SIZE	64
 
 /*!
- Load parameters from file which is specified with #path.  This function reads 
-  data from a beginning of the file line by line, and check parameter name 
-  sequentially. In other words, this function depends on the order of eache 
+ Load parameters from file which is specified with #path.  This function reads
+  data from a beginning of the file line by line, and check parameter name
+  sequentially. In other words, this function depends on the order of eache
   parameter described in the file.
  @return If function fails, the return value is #AKM_ERROR. When function fails,
   the output is undefined. Therefore, parameters which are possibly overwritten
@@ -97,7 +97,7 @@ int16 AKFS_LoadParameters(AKMPRMS * prms, const char* path)
 }
 
 /*!
- Save parameters to file which is specified with #path. This function saves 
+ Save parameters to file which is specified with #path. This function saves
   variables when the offsets of magnetic sensor estimated successfully.
  @return If function fails, the return value is #AKM_ERROR. When function fails,
   the parameter file may collapsed. Therefore, the parameters file should be

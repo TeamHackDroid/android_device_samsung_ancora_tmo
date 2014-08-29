@@ -40,7 +40,7 @@ OrientationSensor::OrientationSensor()
     mPendingEvent.sensor = ID_O;
     mPendingEvent.type =  SENSOR_TYPE_ORIENTATION;
     memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
-    
+
     ALOGD("OrientationSensor::OrientationSensor() open data_fd");
 
     if (data_fd) {
@@ -135,14 +135,14 @@ int OrientationSensor::readEvents(sensors_event_t* data, int count)
     //ALOGD("OrientationSensor::~readEvents() %d", count);
     if (count < 1)
         return -EINVAL;
-        
+
     if (mHasPendingEvent) {
         mHasPendingEvent = false;
         mPendingEvent.timestamp = getTimestamp();
         *data = mPendingEvent;
         return mEnabled ? 1 : 0;
     }
-        
+
     ssize_t n = mInputReader.fill(data_fd);
     if (n < 0)
         return n;

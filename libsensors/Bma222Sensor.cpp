@@ -38,7 +38,7 @@ Bma222Sensor::Bma222Sensor()
     mPendingEvent.sensor = ID_A;
     mPendingEvent.type = SENSOR_TYPE_ACCELEROMETER;
     memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
-    
+
     ALOGD("Bma222Sensor::Bma222Sensor() open data_fd");
 
     if (data_fd) {
@@ -86,7 +86,7 @@ int Bma222Sensor::enable(int32_t, int en)
             //setInitialState();
             return 0;
         }
-        return -1;        
+        return -1;
     }
     return 0;
 }
@@ -123,14 +123,14 @@ int Bma222Sensor::readEvents(sensors_event_t* data, int count)
 {
     if (count < 1)
         return -EINVAL;
-        
+
     if (mHasPendingEvent) {
         mHasPendingEvent = false;
         mPendingEvent.timestamp = getTimestamp();
         *data = mPendingEvent;
         return mEnabled ? 1 : 0;
     }
-        
+
     ssize_t n = mInputReader.fill(data_fd);
     if (n < 0)
         return n;
@@ -162,6 +162,6 @@ int Bma222Sensor::readEvents(sensors_event_t* data, int count)
         }
         mInputReader.next();
     }
- 
+
     return numEventReceived++;
 }

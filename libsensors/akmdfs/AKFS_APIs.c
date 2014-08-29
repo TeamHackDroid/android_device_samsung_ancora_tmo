@@ -171,7 +171,7 @@ int16 AKFS_Stop(void *mem, const char *path)
    Otherwise the return value is #AKM_ERROR.
   @param[in/out] mem A pointer to a handler.
   @param[in] mag A set of measurement data from magnetometer.  X axis value
-   should be in mag[0], Y axis value should be in mag[1], Z axis value should be 
+   should be in mag[0], Y axis value should be in mag[1], Z axis value should be
    in mag[2].
   @param[in] status A status of magnetometer.  This status indicates the result
    of measurement data, i.e. overflow, success or fail, etc.
@@ -220,7 +220,7 @@ int16 AKFS_Get_MAGNETIC_FIELD(
   @return The return value is #AKM_SUCCESS when function succeeds. Otherwise
    the return value is #AKM_ERROR.
   @param[in] acc A set of measurement data from accelerometer.  X axis value
-   should be in acc[0], Y axis value should be in acc[1], Z axis value should be 
+   should be in acc[0], Y axis value should be in acc[1], Z axis value should be
    in acc[2].
   @param[in] status A status of accelerometer.  This status indicates the result
    of acceleration data, i.e. overflow, success or fail, etc.
@@ -266,7 +266,7 @@ int16 AKFS_Get_ACCELEROMETER(
 /*!
   Get orientation sensor's elements. The vector format and coordination system
    follow the Android definition.  Before this function is called, magnetic
-   field vector and acceleration vector should be stored in the buffer by 
+   field vector and acceleration vector should be stored in the buffer by
    calling #AKFS_Get_MAGNETIC_FIELD and #AKFS_Get_ACCELEROMETER.
   @return The return value is #AKM_SUCCESS when function succeeds. Otherwise
    the return value is #AKM_ERROR.

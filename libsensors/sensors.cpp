@@ -112,7 +112,7 @@ static const struct sensor_t sSensorList[] = {
 #ifdef HAL_FOR_AK8975
 	{ "AK8975 3-axis Magnetic field sensor",
 		"Asahi Kasei Microdevices",
-		1,  
+		1,
 		SENSORS_MAGNETIC_FIELD_HANDLE,
 		SENSOR_TYPE_MAGNETIC_FIELD,
 		1228.8f,
@@ -153,7 +153,7 @@ static const struct sensor_t sSensorList[] = {
 		1.0f,
 		10000,
 		{ } }
-		
+
         { "BMA222 Acceleration Sensor",
           "Bosch",
           1, SENSORS_ACCELERATION_HANDLE,
@@ -181,7 +181,7 @@ static int open_sensors(const struct hw_module_t* module, const char* id,
 		struct hw_device_t** device);
 
 static int sensors__get_sensors_list(struct sensors_module_t* module,
-		struct sensor_t const** list) 
+		struct sensor_t const** list)
 {
 	*list = sSensorList;
 	return ARRAY_SIZE(sSensorList);
@@ -231,7 +231,7 @@ private:
 	struct pollfd mPollFds[numFds];
 	int mWritePipeFd;
 	SensorBase* mSensors[numSensorDrivers];
-	
+
     // For keeping track of usage (only count from system)
     bool mAccelActive;
     bool mMagnetActive;
@@ -241,7 +241,7 @@ private:
 
     int handleToDriver(int handle) const {
         switch (handle) {
-           
+
             case ID_A:
                 return bosch;
             case ID_M:
@@ -252,12 +252,12 @@ private:
                 return proximity;
             case ID_L:
                 return light;
-                 
+
         }
         return -EINVAL;
     }
 
-	/* These function will be different depends on 
+	/* These function will be different depends on
 	 * which sensor is implemented in AKMD program.
 	 */
 	int handleToDriver(int handle);
@@ -278,7 +278,7 @@ sensors_poll_context_t::sensors_poll_context_t()
 	mPollFds[akm].fd = mSensors[akm]->getFd();
 	mPollFds[akm].events = POLLIN;
 	mPollFds[akm].revents = 0;
-	
+
     mSensors[light] = new LightSensor();
     mPollFds[light].fd = mSensors[light]->getFd();
     mPollFds[light].events = POLLIN;
@@ -359,7 +359,7 @@ int sensors_poll_context_t::activate(int handle, int enabled) {
 		ALOGE_IF(result<0, "error sending wake message (%s)", strerror(errno));
 	}
 	return err;
-	
+
 	    // Orientation requires accelerometer and magnetic sensor
     if (handle == ID_O) {
         mOrientationActive = enabled ? true : false;
@@ -385,7 +385,7 @@ int sensors_poll_context_t::activate(int handle, int enabled) {
     }
 
     return real_activate(handle, enabled);
-	
+
 }
 
 int sensors_poll_context_t::real_activate(int handle, int enabled) {
@@ -418,7 +418,7 @@ int sensors_poll_context_t::setDelay(int handle, int64_t ns) {
 		err = mSensors[acc]->setDelay(handle, ns);
 	}
 	return err;
-	
+
 	if (index < 0) return index;
     return mSensors[index]->setDelay(handle, ns);
 }
