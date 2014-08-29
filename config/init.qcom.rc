@@ -186,7 +186,7 @@ on boot
 
     # Permissions for led device
     chmod 666 /dev/ledflash
-	
+
     # Read only 1 page at a time
     write /proc/sys/vm/page-cluster 0
 
