@@ -48,7 +48,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/config/fstab.qcom:root/fstab.qcom \
     $(LOCAL_PATH)/config/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
-    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs 
+    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs
 
 # Needed to reset bootmode when leaving recovery
 PRODUCT_COPY_FILES += \
@@ -70,7 +70,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyfiles/sec_power_key.kl:system/usr/keylayout/sec_power_key.kl \
     $(LOCAL_PATH)/keyfiles/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
 
-	
+
 # LPM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm/bin/charging_mode:system/bin/charging_mode \
@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
-    libnetcmdiface    
+    libnetcmdiface
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \

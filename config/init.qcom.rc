@@ -9,7 +9,7 @@ on init
     mkdir /storage/sdcard0 0000 system system
     mkdir /storage/sdcard1 0000 system system
     mkdir /storage/usbdisk 0000 system system
-	
+
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdisk
 
@@ -166,7 +166,7 @@ on boot
     # Flash storage isn't a good entropy source, and only causes locking
     # overhead in the kernel. Turn it off.
     write /sys/block/mmcblk0/queue/add_random 0
-	
+
 	# Permissions for led device
 	chmod 666 /dev/ledflash
 
