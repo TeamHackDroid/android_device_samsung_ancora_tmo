@@ -64,7 +64,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Set the Guardband value. Only active if forceGuardband is set to 1. 
+; Set the Guardband value. Only active if forceGuardband is set to 1.
 ; Valid values:
 ;   0..7 - Set this guardband value if forceGuardband is set to 1.  Valid range on Yamato is 0 to
 ;          7.
@@ -73,7 +73,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Force GMEM size reduction for testing purposes. 
+; Force GMEM size reduction for testing purposes.
 ; Valid values:
 ;   0   -  (default) do not reduce the GMEM size.
 ;   1   -  force the GMEM size to the value specified by gmemSize.
@@ -105,7 +105,7 @@
 ; Bins weight percentage.
 ; Valid values:
 ;   80  -  (default) percentage is 80%.
-;   Int - Integer between 0 and 100: percentage is set to this value. 
+;   Int - Integer between 0 and 100: percentage is set to this value.
 ;
 ;numBins_weight=80
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -151,7 +151,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Specify that a shader should be dumped. 
+; Specify that a shader should be dumped.
 ; Valid values:
 ;   0 - (default) do not dump a shader.
 ;   1 - dump the shader specified in log.sc_dev_shader_name.
@@ -191,7 +191,7 @@
 ;   0 - (default) do not enable.
 ;   1 - do enable.
 ;
-;log.cffdump_with_ifh=0                 
+;log.cffdump_with_ifh=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -200,16 +200,16 @@
 ;   0 - (default) do not enable.
 ;   1 - do enable.
 ;
-;log.cffdump_no_memzero=0       
+;log.cffdump_no_memzero=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Enable dumpx. 
+; Enable dumpx.
 ; Valid values:
 ;   0 - (default) do not enable.
 ;   1 - enable.
 ;
-;log.dumpx=0 
+;log.dumpx=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -272,7 +272,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Use GSL safe mode. 
+; Use GSL safe mode.
 ; Valid values:
 ;   0 - (default) do not use GSL safe mode.
 ;   1 - use GSL safe mode.
@@ -281,7 +281,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Redirect debug messages. 
+; Redirect debug messages.
 ; Valid values:
 ;   0 - (default) do not redirect debug messages.
 ;   1 - do redirect debug messages.
@@ -317,7 +317,7 @@
 ; Valid values:
 ;   default - (default) use the chip default for conversions of triangle strips to triangle lists.
 ;   on      - force conversion of triangle strips to triangle lists.
-;   off     - do not convert triangle strips to triangle lists. 
+;   off     - do not convert triangle strips to triangle lists.
 ;
 ;convertTristrips=default
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -325,7 +325,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Force conversion of triangle fans to triangle lists.
 ; Valid values:
-;   default - (default) use the chip default for conversions of triangle fans to triangle lists. 
+;   default - (default) use the chip default for conversions of triangle fans to triangle lists.
 ;   on      - force conversion of triangle fans to triangle lists.
 ;   off     - do not convert triangle fans to triangle lists.
 ;
@@ -337,7 +337,7 @@
 ; Valid values:
 ;   default - (default) use the chip default for conversion of line loops to line lists.
 ;   on      - force conversion of line loops to line lists.
-;   off     - do not convert line loops to line lists. 
+;   off     - do not convert line loops to line lists.
 ;
 ;convertLineloops=default
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -353,7 +353,7 @@
 ; <HASH> is a 32 bit hash of the shader text, same hash algorithm as shader logging.
 ;
 ; Files are written to the DRIVER_DEBUG_PATH.
-; 
+;
 ; Valid values:
 ;   1      - Write files.
 ;   0      - Do not write files.
@@ -415,9 +415,9 @@
 ; Specify data alignment for Vertex Buffer Objects (VBOs).
 ; Valid values:
 ;   natural - (default) use natural data alignment for Vertex Buffer Objects.
-;   dword   - force double word alignment for Vertex Buffer Objects.         
+;   dword   - force double word alignment for Vertex Buffer Objects.
 ;
-;vboDataAlignment=natural 
+;vboDataAlignment=natural
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -440,7 +440,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Force automatic texture compression (does not affect FBOs, EGLimage, or other user generated
-;  textures). 
+;  textures).
 ; Valid values:
 ;   0 - (default) do not force.
 ;   1 - do force.
@@ -458,12 +458,12 @@
 ;   3 - set to 3/8.
 ;
 ;triJuice=0
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;    
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Enable inline constant updates. This is the default value. 
+; Enable inline constant updates. This is the default value.
 ; Valid values:
-;   1 - (default) enable inline constant updates. 
+;   1 - (default) enable inline constant updates.
 ;   0 - disable inline constant updates.
 ;
 ;enableInlineConstantUpdates=1
@@ -494,7 +494,7 @@
 ;   0 - disable (default).
 ;   1 - enable.
 ;
-;ditherSafeFastClears=0   
+;ditherSafeFastClears=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -563,11 +563,11 @@
 ;##################################################################################################
 ;    MultiSampling Antialiasing (MSAA)
 ;##################################################################################################
-    
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Specify the multisampling antialiasing smoothing strategy.
 ; Valid values:
-;   Normal - (default) use normal MSAA smoothing. This is the default value. 
+;   Normal - (default) use normal MSAA smoothing. This is the default value.
 ;   High   - use high MSAA smoothing.
 ;
 ;MSAASmoothing=Normal
@@ -576,11 +576,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Specify the allocation strategy for multisampling antialiasing buffers.
 ; Valid values:
-;   on_demand - allocate MSAA buffer on demand. This is the default value. 
+;   on_demand - allocate MSAA buffer on demand. This is the default value.
 ;   always    - always allocate MSAA buffer.
 ;   never     - never allocate an MSAA buffer.
 ;
-;MSAABufferAllocation=on_demand 
+;MSAABufferAllocation=on_demand
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -591,15 +591,15 @@
 ;
 ;forceMSAAMode=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Specifiy the antialiasing mode to use if forceMSAAMode is enabled.
 ; Valid values:
 ;   0 - (default) do not antialias.
 ;   1 - use 2x antialiasing.
-;   2 - use 4x antialiasing.   
+;   2 - use 4x antialiasing.
 ;
-;MSAAMode=0 
+;MSAAMode=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;##################################################################################################
@@ -649,17 +649,17 @@
 ;
 ;VAESRandomSeed=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Set the failure percentage.
 ; Valid values:
-;   Int - set the failure percentage to this value. 
+;   Int - set the failure percentage to this value.
 ;
 ;VAESFailPercent=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;##################################################################################################
-;    2D Settings:    
+;    2D Settings:
 ;##################################################################################################
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -691,7 +691,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Set the eglSwapBuffers interval to be used if 2D.forceEglSwapinterval is set to 1. 
+; Set the eglSwapBuffers interval to be used if 2D.forceEglSwapinterval is set to 1.
 ; Valid values:
 ;   Int - Set the eglSwapBuffers interval to this value if 2D.forceEglSwapInterval is set.
 ;
@@ -745,7 +745,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Disable Oxili lazy updates.  If lazy updates are not disabled, the HLSQ will defer any indirect
-; state updates until the first non-killed batch is encounted.  
+; state updates until the first non-killed batch is encounted.
 ; Valid values:
 ;   0 - (default) do not disable.
 ;   1 - disable lazy updates.
@@ -796,7 +796,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Force Cstore Single Buffer.  Force constant store into single buffer mode.  In single buffer mode
 ; HW supports up to 512 total constants and FS constants are always written to the same address.
-; Can be useful for debug.   
+; Can be useful for debug.
 ; Valid values:
 ;   0 - (default) do not force.
 ;   1 - do force.
@@ -805,7 +805,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Force shader single context. 
+; Force shader single context.
 ; Valid values:
 ;   0 - (default) do not force.
 ;   1 - do force.
@@ -814,7 +814,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Force superthread mode. 
+; Force superthread mode.
 ; Valid values:
 ;   0 - (default) do not force.
 ;   1 - do force.
@@ -832,7 +832,7 @@ Force VS Single Thread.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Force Fs Single Thread. 
+; Force Fs Single Thread.
 ; Valid values:
 ;   0 - (default) do not disable.
 ;   1 - disable.
@@ -868,11 +868,11 @@ Force VS Single Thread.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;##################################################################################################
-;    Other settings.   
+;    Other settings.
 ;##################################################################################################
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Cap value for frames per second. Do not cap if value < 0 or value > 1000.            
+; Cap value for frames per second. Do not cap if value < 0 or value > 1000.
 ; Valid values:
 ;   0   - (default) do not cap.
 ;   Int - (integer) cap to this number of frames per second if N <=1000, do not cap if > 1000.
@@ -890,19 +890,19 @@ Force VS Single Thread.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Suppress timestamp interrupts. 
+; Suppress timestamp interrupts.
 ; Valid values:
 ;   0 - (default) do not suppress.
 ;   1 - suppress.
 ;
-;suppressTimestampInterrupts=0 
+;suppressTimestampInterrupts=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Turn on detection of GPU timeouts: use GPUIdleTimeoutMsec for the timeout value. 
+; Turn on detection of GPU timeouts: use GPUIdleTimeoutMsec for the timeout value.
 ; Valid values:
-;   off - turn off the detection of GPU timeouts. 
-;   on  - turn on detection of GPU timeouts and use GPUIdleTimeoutMsec for the timeout value. 
+;   off - turn off the detection of GPU timeouts.
+;   on  - turn on detection of GPU timeouts and use GPUIdleTimeoutMsec for the timeout value.
 ;
 ;GPUIdleTimeout=off
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -911,7 +911,7 @@ Force VS Single Thread.
 ; Set the GPU Idle Timeout value.
 ; Valid values:
 ;   0 - (default) do not time out.
-;   N - (integer) if GPUIdleTimeout is on, set the timeout value to this millicsecond value. 
+;   N - (integer) if GPUIdleTimeout is on, set the timeout value to this millicsecond value.
 ;
 ;GPUIdleTimeoutMsec=0
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

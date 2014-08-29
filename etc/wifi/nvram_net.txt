@@ -1,5 +1,5 @@
 #Hawk R0.3 101116_Calibration
-#nvram_override=1 
+#nvram_override=1
 # bcm94329sdagb board
 # $Copyright (C) 2008 Broadcom Corporation$
 # $id$
@@ -23,7 +23,7 @@ aa5g=0
 
 ag0=255
 
-# 11g paparams 
+# 11g paparams
 pa0b0=6003,6003,5748
 pa0b1=64086,64086,64217
 pa0b2=65195,65195,65217

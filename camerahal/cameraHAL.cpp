@@ -496,7 +496,7 @@ int camera_set_preview_window(struct camera_device * device,
 
     dev->preview_width = preview_width;
     dev->preview_height = preview_height;
-    
+
         dev->overlay =  new Overlay(wrap_set_fd_hook,
                                     wrap_set_crop_hook,
                                     wrap_queue_buffer_hook,
