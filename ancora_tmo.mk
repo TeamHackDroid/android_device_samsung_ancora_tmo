@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
     $(LOCAL_PATH)/prebuilt/SamsungServiceMode.apk:system/app/SamsungServiceMode.apk \
     $(LOCAL_PATH)/prebuilt/TaskManager.apk:system/app/TaskManager.apk \
-    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs 
+    $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs
 
 # Modules
 PRODUCT_COPY_FILES += \
@@ -62,7 +62,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/cifs.ko:system/lib/modules/cifs.ko \
     $(LOCAL_PATH)/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
     $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
-	
+
 # Needed to reset bootmode when leaving recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
@@ -153,7 +153,7 @@ PRODUCT_PACKAGES += \
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
-    
+
 # Kernel
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
