@@ -64,4 +64,4 @@ ro.bootloader.mode=download
 # Use ION uncached buffers for video recording and video playback
  persist.camera.mem.usecache=0
  persist.video.mem.usecache=0
- 
+
